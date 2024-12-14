@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+.contactbanner img {
+  width: 100%;
+  height: auto;
+}
+.contactContainer{
+  font-size: 18px;
+  line-height: 2.5rem;
+}
+.contacthead{
+  font-family: "PT Serif", serif;
+  font-weight:bold;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+.contactDetails {
+  flex: 1;
+  max-width: 45%;
+}
+
+.contactDetails p {
+  font-size: 1rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.contactDetails ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contactDetails li {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.icon {
+  margin-right: 10px;
+  color: #0098d8;
+}
+
+.contactForm {
+  flex: 1;
+  max-width: 45%;
+}
+
+.contactForm h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 1rem;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #34495e;
+  box-sizing: border-box;
+}
+
+.inputGroup textarea {
+  resize: none;
+  height: 100px;
+}
+.form-group{
+  padding-bottom: 10px;
+}
+
+.submitButton {
+  background-color: #0098d8;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.submitButton:hover {
+  background-color: #007ba7;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contactDetails,
+  .contactForm {
+    max-width: 100%;
+  }
+
+  .contactDetails h2,
+  .contactForm h2 {
+    font-size: 1.8rem;
+  }
+
+  .inputGroup input,
+  .inputGroup textarea {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .contactDetails h2,
+  .contactForm h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .submitButton {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+}
+
