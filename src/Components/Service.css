@@ -1,35 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-.service-section{
-  font-family:"PT Serif", serif ;
-  margin-top:20px;
-  margin-bottom:20px;
+
+.service-section {
+  font-family: "PT Serif", serif;
+  margin: 20px 0;
   overflow: hidden;
-  
 }
+
+.container-service {
+  padding: 20px;
+}
+
+.service-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Left side: Image styling */
+.service-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Right side: Review carousel */
+.service-carousel {
+  text-align: center;
+}
+
 .review-box {
   position: relative;
   overflow: hidden;
   font-size: 16px;
-  height: 250px; 
-  width: 550px; /* Keep this as is */
+  margin: 0 auto;
+  height: auto;
+  max-width: 100%;
+  width: 550px;
 }
 
 .review-details-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%; 
 }
 
 .review-slide {
   flex-shrink: 0;
-  width: 100%; 
+  width: 100%;
   text-align: center;
   transition: opacity 0.5s ease-in-out;
 }
 
 .review-image img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   margin-bottom: 10px;
   border-radius: 50%;
 }
@@ -41,10 +64,99 @@
 
 .review-details p {
   margin: 0;
-}
-.review-nav{
-  text-align: end;
-  
-
+  font-size: 14px;
 }
 
+/* Navigation Buttons (Optional, add buttons if needed) */
+.review-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.review-nav svg {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Responsive Breakpoints */
+
+/* Large screens (1200px and above) */
+@media only screen and (min-width: 1200px) {
+  .service-row {
+    flex-direction: row;
+  }
+ 
+}
+
+/* Medium screens (768px - 1199px) */
+@media only screen and (max-width: 1199px) {
+  .service-row {
+    flex-direction: row;
+  }
+  .review-box {
+    width: 90%;
+  }
+  .service-image img {
+    height: auto;
+  }
+}
+
+/* Small screens (up to 767px) */
+@media only screen and (max-width: 767px) {
+  .service-row {
+    flex-direction: column;
+  }
+
+  .service-image {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .review-box {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .review-slide {
+    text-align: center;
+  }
+
+  .review-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .review-details h3 {
+    font-size: 18px;
+  }
+
+  .review-details p {
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens (up to 425px) */
+@media only screen and (max-width: 425px) {
+  .review-box {
+    width: 100%;
+  }
+
+  .review-slide {
+    padding: 0 10px;
+  }
+
+  .review-image img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .review-details h3 {
+    font-size: 16px;
+  }
+
+  .review-details p {
+    font-size: 12px;
+  }
+}

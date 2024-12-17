@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./Service.css";
 import client1 from "../assets/client1.jpg";
 import client2 from "../assets/client2.jpg";
-import { MdKeyboardArrowLeft } from "react-icons/md";
-import { MdKeyboardArrowRight } from "react-icons/md";
-import servicepicture from "../assets/servicepicture.jpg";
+// import { MdKeyboardArrowLeft } from "react-icons/md";
+// import { MdKeyboardArrowRight } from "react-icons/md";
+import servicepicture from "../assets/Servicedesign.png";
 
 const Service = () => {
   const [currentReview, setCurrentReview] = useState(0);
@@ -95,11 +95,11 @@ const Service = () => {
                       
                       
                     </div>
-                    <div className="review-nav " >
+                    {/* <div className="review-nav " >
             <MdKeyboardArrowLeft  style={{height:"50px", width:"50px"}} onClick={handlePreviousReview} className="prev-button" /> 
             <MdKeyboardArrowRight style={{height:"50px", width:"50px"}} onClick={handleNextReview} className="next-button"/>
                 
-            </div>
+            </div> */}
 
                     </div>
                   </div>

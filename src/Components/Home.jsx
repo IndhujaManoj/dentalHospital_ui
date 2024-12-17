@@ -38,12 +38,12 @@ const Home = () => {
         <div className="row gy-4">
           {/* Service Cards */}
           {[
-            { id: "cosmetic", title: "Cosmetic Dentistry", desc: "by professionals", img: cosmetic },
-            { id: "rootcanal", title: "Root Canal Treatment", desc: "Accurate approach", img: rootcanal },
-            { id: "dentures", title: "Dentures", desc: "Individual approach", img: dentures },
-            { id: "dentalhygiene", title: "Dental Hygiene", desc: "Safety and Carefully", img: dentalhygiene },
-            { id: "dentalhygiene", title: "Dental Hygiene", desc: "Safety and Carefully", img: dentalhygiene },
-            { id: "orthodontics", title: "Orthodontics", desc: "24/7", img: orthodontics },
+            { id: "cosmetic", title: "Cosmetic Dentistry",  img: cosmetic },
+            { id: "rootcanal", title: "Root Canal Treatment",  img: rootcanal },
+            { id: "dentures", title: "Dentures",  img: dentures },
+            { id: "dentalhygiene", title: "Dental Hygiene",  img: dentalhygiene },
+            { id: "dentalhygiene", title: "Dental Hygiene",  img: dentalhygiene },
+            { id: "orthodontics", title: "Orthodontics",  img: orthodontics },
           ].map((service, idx) => (
             <div className={`col-md-4 ${idx === 4 ? "d-flex align-items-center" : ""}`} key={service.id}>
               <div className="service-card text-center" style={{height:"250px",width:"100%"}}>
@@ -83,7 +83,7 @@ const Home = () => {
               </li>
             ))}
           </ul>
-          <a href="#visit" className="btn btn-dark btn-lg">
+          <a href="/contact-us" className="btn btn-dark btn-lg">
             Visit Us
           </a>
         </div>

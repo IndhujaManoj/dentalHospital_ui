@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Appointment.css";
-import Appointmentimg from "../assets/Appointmentimg.png";
+import Appointmentimg from "../assets/Appointmentmodel.png";
 
 const Appointment = () => {
   const [name, setName] = useState("");
@@ -56,7 +56,7 @@ const Appointment = () => {
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Form submitted successfully!");
+      alert("Appointment request submitted successfully!");
 
       // Clear all inputs
       setName("");
@@ -99,7 +99,9 @@ const Appointment = () => {
             <input
                 name="date"
                 type="date"
+                placeholder="dd-mm-yyyy*"
                 className={`form-control mb-3 ${errors.date ? "is-invalid" : ""}`}
+                style={{color:"gray"}}
                 min={new Date().toISOString().split("T")[0]}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
@@ -117,11 +119,11 @@ const Appointment = () => {
                 />
                 {errors.time && <div className="invalid-feedback">{errors.time}</div>}
                 {showDropdown && (
-                  <ul className="dropdown-menu show w-100">
+                  <ul className="Appointdropdown-menu show w-100">
                     {timeSlots.map((slot, index) => (
                       <li
                         key={index}
-                        className="dropdown-item"
+                        className="Appointdropdown-item"
                         onClick={() => handleTimeSelect(slot)}
                       >
                         {slot}
@@ -168,7 +170,7 @@ const Appointment = () => {
 
         {/* Right Side: Image */}
         <div className="col-md-6 image-side">
-          <img src={Appointmentimg} alt="Doctor" className="img-fluid"/>
+          <img src={Appointmentimg} alt="Doctor" className="img-fluid" style={{width:"100%"}}/>
         </div>
       </div>
     </div>

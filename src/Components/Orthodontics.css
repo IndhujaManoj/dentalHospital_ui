@@ -1,0 +1,113 @@
+/* Container styling */
+.ortho-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+    color: #333;
+  }
+  
+  /* Title Styling */
+  .ortho-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00a3ff;
+  }
+  
+  .ortho-subtitle {
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  
+  /* Paragraph text */
+  .ortho-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  
+  /* Custom List */
+  .ortho-list {
+    padding-left: 20px;
+  }
+  
+  .ortho-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+  }
+  
+  /* Image styling */
+  .ortho-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .ortho-title {
+      font-size: 2rem;
+    }
+  
+    .ortho-subtitle {
+      font-size: 1.3rem;
+    }
+  
+    .ortho-text,
+    .ortho-list li {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .ortho-title {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+  
+    .ortho-subtitle {
+      font-size: 1.2rem;
+      text-align: center;
+    }
+  
+    .ortho-text,
+    .ortho-list li {
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+  
+    .ortho-container {
+      padding: 10px;
+    }
+  
+    .ortho-image {
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .ortho-title {
+      font-size: 1.6rem;
+    }
+  
+    .ortho-subtitle {
+      font-size: 1rem;
+    }
+  
+    .ortho-text,
+    .ortho-list li {
+      font-size: 0.85rem;
+    }
+  
+    .ortho-container {
+      padding: 5px;
+    }
+  }
+  

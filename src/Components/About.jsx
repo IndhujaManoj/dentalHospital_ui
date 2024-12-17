@@ -1,5 +1,5 @@
 import React from 'react'
-import about from "../assets/About-img.png"
+import about from "../assets/servicepicture.jpg"
 import "./About.css"
 import doctor1 from "../assets/doctor1.jpeg";
 import doctor2 from "../assets/doctor2.jpeg";
@@ -12,7 +12,7 @@ const About = () => {
         <div className="container my-5" style={{margintop: "50px"}}>
       <div className="row align-items-center">
         <div className="col-md-6">
-          <img src={about} alt="Doctor" className="img-fluid rounded"  style={{maxWidth:"100%",height:"650px"}}/>
+          <img src={about} alt="Doctor" className="img-fluid rounded"  style={{width:"100%",height:"500px"}}/>
         </div>
         <div className="col-md-6">
           <h2 className="display-4">We Provide</h2>
@@ -21,7 +21,7 @@ const About = () => {
           <p>We provide the most full medical services, so every person could have the opportunity to receive qualitative medical help.</p>
           <p>Clinical excellence, diversity, and access to innovative technology are all hallmarks of the graduate medical education experience at Careex. Our residents, fellows, and renowned staff share their experience working at Careex.</p>
           <p><strong>We try to do our best to help you and provide with a high-quality services.</strong></p></div>
-          <a href="contact_link" className=" serbtn btn btn-lg" style={{backgroundColor:"#045c7c", color:"white"}}>Get in Touch</a>
+          <a href="/contact-us" className=" serbtn btn btn-lg" style={{backgroundColor:"#045c7c", color:"white"}}>Get in Touch</a>
         </div>
       </div>
     </div>

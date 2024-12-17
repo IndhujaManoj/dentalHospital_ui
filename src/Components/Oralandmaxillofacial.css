@@ -1,0 +1,38 @@
+/* Custom List Styling */
+.custom-list {
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+  .container p{
+    font-size: 16px;
+    line-height: 2rem;
+    text-align:justify;
+  }
+  
+  .custom-list li {
+    margin-bottom: 1rem;
+    position: relative;
+    font-size: 16px;
+    text-align: justify;
+  }
+  
+  .custom-list li::before {
+    content: "•"; /* Custom bullet */
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    color:black; /* Bullet color */
+    font-size: 1.2rem;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    .img-fluid {
+      margin-top: 1rem;
+    }
+  }
+  

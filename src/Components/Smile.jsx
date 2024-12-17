@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Smile.css"
 import smilepics from "../assets/smilepics.jpg"
-import smilebanner from "../assets/Smilebanner.jpg"
-import Adress from "./Adress";
+import smilebanner from "../assets/smilegallerybanner.jpg"
+import Appointment from "./Appointment";
 
 
 const Smile = () => {
@@ -57,7 +57,7 @@ const Smile = () => {
 
   return (
     <>
-    <img className="img-fluid" src={smilebanner} alt="Contact Banner" style={{width:"100%",height:"400px"}}/>
+    <img className="img-fluid" src={smilebanner} alt="Contact Banner" style={{width:"100%",height:"500px"}}/>
     <div className="smile-gallery container my-5">
       <h1 className="text-center mb-4">Smile Gallery</h1>
       <h3>Cosmetic Treatment</h3>
@@ -105,8 +105,9 @@ const Smile = () => {
           </div>
         </div>
       )}
-      <Adress/>
+      
     </div>
+    <Appointment/>
     </>
   );
 };

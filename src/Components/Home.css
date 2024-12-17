@@ -100,7 +100,8 @@
     background: #04abe3;
     color: #fff;
     border-radius: 10px;
-    padding: 40px;
+    padding:30px;
+    
     height: auto;
   }
   
@@ -119,6 +120,7 @@
   .timetable-card p {
     font-size: 1rem;
     margin-bottom: 20px;
+    text-align: justify;
   }
   
   .timetable-list {
@@ -136,6 +138,7 @@
   
   .timetable-card .btn {
     margin-top: 10px;
+    
   }
   
   /* Responsive Adjustments */
@@ -148,6 +151,15 @@
     }
     .timetable-card .btn {
       margin-top: 20px;
+    }
+    .text-section{
+      padding-top:100px;
+      padding-left:40px;
+      padding-right: 20px;
+      width:500px
+    }
+    .text-section p{
+      font-size: smaller;
     }
   }
   

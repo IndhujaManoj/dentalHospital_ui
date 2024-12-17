@@ -8,6 +8,32 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+.position-relative {
+  position: relative; 
+}
+.Appointdropdown-menu {
+  position: absolute; /* Prevent it from affecting layout */
+  top: 100%; /* Position below the input */
+  left: 0; /* Align with the left edge */
+  z-index: 1000; /* Ensure it appears on top */
+  max-height: 200px; /* Optional: Set a max height for scrolling */
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Items */
+.Appointdropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #333;
+}
+
+.Appointdropdown-item:hover {
+  background-color: #f1f1f1;
+}
 
 .form-side {
   padding: 15px;
@@ -156,9 +182,9 @@
 }
 
 /* Small mobile screens (max-width: 425px) */
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .appointment-container {
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     gap: 15px;
     margin: 10px;
     padding: 10px;
