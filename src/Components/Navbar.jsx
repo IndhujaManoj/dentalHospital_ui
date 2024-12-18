@@ -6,7 +6,6 @@ import { IoMail } from "react-icons/io5";
 import { FaAddressCard, FaSquareInstagram } from "react-icons/fa6";
 
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(false);
   const [activeSubDropdown, setActiveSubDropdown] = useState(null);
 
@@ -58,27 +57,18 @@ const Navbar = () => {
                 style={{ height: "70px", width: "300px" }}
               />
             </a>
-            {/* Toggle Button */}
             <button
               className="navbar-toggler"
               type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
               aria-controls="navbarNav"
-              aria-expanded={navbarOpen}
+              aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              {navbarOpen ? (
-                <span className="close-icon">&times;</span> // Close icon
-              ) : (
-                <span className="navbar-toggler-icon"></span> // Default Bootstrap icon
-              )}
+              <span className="navbar-toggler-icon"></span>
             </button>
-
-            {/* Navbar Items */}
-            <div
-              className={`collapse navbar-collapse ${navbarOpen ? "show" : ""}`}
-              id="navbarNav"
-            >
+            <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
                   <a className="nav-link" href="/">
@@ -91,60 +81,90 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li
-                  className={`nav-item dropdown ${activeDropdown ? "show" : ""}`}
-                  onMouseEnter={() => setActiveDropdown(true)}
-                  onMouseLeave={() => setActiveDropdown(false)}
-                >
-                  <a className="nav-link" href="/treatments">
-                    TREATMENTS
+  className={`nav-item dropdown ${activeDropdown ? "show" : ""}`}
+  onMouseEnter={() => setActiveDropdown(true)}
+  onMouseLeave={() => setActiveDropdown(false)}
+>
+  <a className="nav-link" href="/treatments">
+    TREATMENTS
+  </a>
+  <ul className="dropdown-menu">
+    {[
+      {
+        name: "Orthodontics",
+        submenu: [
+          { name: "Oral and Maxillofacial", link: "/treatments/oral-maxillofacial" },
+          { name: "Orthodontics", link: "/treatments/orthodontics" },
+        ],
+      },
+      {
+        name: "Conservative Dentistry",
+        submenu: [
+          { name: "Cosmetic Dentistry", link: "/treatments/cosmetic-dentistry" },
+          { name: "Dental Veneers", link: "/treatments/dental-veneers" },
+          { name: "Teeth Whitening", link: "/treatments/teeth-whitening" },
+          { name: "Smile Makeover", link: "/treatments/smile-makeover" },
+        ],
+      },
+      {
+        name: "Prostodontics",
+        submenu: [
+          { name: "Dental Bridges", link: "/treatments/dental-bridges" },
+          { name: "Dental Implants", link: "/treatments/dental-implants" },
+          { name: "Dental Crowns", link: "/treatments/dental-crowns" },
+          { name: "Dentures", link: "/treatments/dentures" },
+        ],
+      },
+      {
+        name: "Periodontics",
+        submenu: [
+          { name: "Teeth Scaling", link: "/treatments/teeth-scaling" },
+        ],
+      },
+      { name: "Laser Dentistry", link: "/treatments/laser-dentistry" },
+      { name: "Pediatric Dentistry", link: "/treatments/pediatric-dentistry" },
+      { name: "Sedation Dentistry", link: "/treatments/sedation-dentistry" },
+      { name: "Root Canal Treatment", link: "/treatments/root-canal-treatment" },
+      { name: "Brushing Techniques", link: "/treatments/brushing-techniques" },
+    ].map((item, index) => (
+      <li
+        key={index}
+        className={`dropdown-item ${item.submenu ? "has-submenu" : ""}`}
+        onMouseEnter={() => setActiveSubDropdown(index)}
+        onMouseLeave={() => setActiveSubDropdown(null)}
+      >
+        <a href={item.link || "#"}>{item.name}</a>
+        {item.submenu && <span className="submenu-icon">▶</span>}
+        {item.submenu && activeSubDropdown === index && (
+          <ul className="submenu">
+            {item.submenu.map((subItem, subIndex) => (
+              <li key={subIndex} className="submenu-item">
+                <a href={subItem.link}>{subItem.name}</a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</li>
+
+
+                {/* <li className="nav-item">
+                  <a className="nav-link" href="/virtual-tour">
+                    VIRTUAL TOUR
                   </a>
-                  <ul className="dropdown-menu">
-                    {[
-                      {
-                        name: "Orthodontics",
-                        submenu: [
-                          {
-                            name: "Oral and Maxillofacial",
-                            link: "/treatments/oral-maxillofacial",
-                          },
-                          { name: "Orthodontics", link: "/treatments/orthodontics" },
-                        ],
-                      },
-                      {
-                        name: "Conservative Dentistry",
-                        submenu: [
-                          { name: "Cosmetic Dentistry", link: "/treatments/cosmetic-dentistry" },
-                          { name: "Dental Veneers", link: "/treatments/dental-veneers" },
-                          { name: "Teeth Whitening", link: "/treatments/teeth-whitening" },
-                          { name: "Smile Makeover", link: "/treatments/smile-makeover" },
-                        ],
-                      },
-                    ].map((item, index) => (
-                      <li
-                        key={index}
-                        className={`dropdown-item ${item.submenu ? "has-submenu" : ""}`}
-                        onMouseEnter={() => setActiveSubDropdown(index)}
-                        onMouseLeave={() => setActiveSubDropdown(null)}
-                      >
-                        <a href={item.link || "#"}>{item.name}</a>
-                        {item.submenu && activeSubDropdown === index && (
-                          <ul className="submenu">
-                            {item.submenu.map((subItem, subIndex) => (
-                              <li key={subIndex} className="submenu-item">
-                                <a href={subItem.link}>{subItem.name}</a>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav-link" href="/smile-gallery">
                     SMILE GALLERY
                   </a>
                 </li>
+                {/* <li className="nav-item">
+                  <a className="nav-link" href="/events">
+                    EVENTS
+                  </a>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav-link" href="/contact-us">
                     CONTACT US
@@ -159,4 +179,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;  
