@@ -1,94 +1,117 @@
-import React from 'react'
-import "./Oralandmaxillofacial.css"
-import sedationtimg from "../assets/sedationdentistry.png"
+import React, { useState } from "react";
+import sedationtimg from "../assets/sedationdentistry.png";
+import "./Oralandmaxillofacial.css";
 
-const Sedationdentistry = () => {
+const SedationDentistry = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAnswer = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const faqData = [
+    {
+      question: "What do you mean by sedation?",
+      answer:
+        "Sedation dentistry helps one to virtually snooze during visits to the dental clinic. It allows patients to go through the entire dental procedure comfortably and safely.",
+    },
+    {
+      question: "Who are the best candidates for sedation dentistry?",
+      answer: (
+        <ul>
+          <li>People who gag</li>
+          <li>Have problems getting numb</li>
+          <li>Have a fear of dental treatment</li>
+          <li>Have sensitive teeth</li>
+          <li>Have experienced traumatic dental procedures</li>
+          <li>Hate shots and needles</li>
+          <li>Dislike the smell, noise, and taste of dental treatment</li>
+        </ul>
+      ),
+    },
+    {
+      question: "Does one experience any pain?",
+      answer:
+        "Patients feel very comfortable and experience no pain during the dental treatment, and they feel even better after the procedure is completed.",
+    },
+    {
+      question: "What type of sedation is used?",
+      answer:
+        "General anesthesia is one type of sedation that requires a breathing machine. For oral surgeries, IV sedation is used. The most convenient, safe, and comfortable type is oral sedation, where a pill is given to the patient a few hours before the dental visit.",
+    },
+    {
+      question: "What are different levels of sedation?",
+      answer: (
+        <>
+          <p><strong style={{ color: "#04abe3" }}>Mild Sedation:</strong> The patient remains conscious and responds to verbal commands. Heart function and breathing are unaffected, though coordination and cognitive functions may be impaired.</p>
+          <p><strong style={{ color: "#04abe3" }}>Moderate Sedation:</strong> There is a depression of consciousness, and the patient responds to commands. Breathing and heart function are not affected.</p>
+          <p><strong style={{ color: "#04abe3" }}>Deep Sedation:</strong> The patient cannot be easily aroused and shows purposeful responses. Breathing may be impaired, but heart function remains normal.</p>
+          <p><strong style={{ color: "#04abe3" }}>General Anesthesia:</strong> The patient experiences a complete loss of consciousness and cannot be aroused. Breathing is impaired, requiring ventilator support, and heart function may also be affected.</p>
+        </>
+      ),
+    },
+    {
+      question: "Who administers the sedation?",
+      answer:
+        "Our anesthetist, who is specifically trained for dental sedation and general anesthesia, provides sedation for our clients.",
+    },
+    {
+      question: "Does a person remember anything about the treatment?",
+      answer:
+        "After the treatment, patients typically forget their experience at the dental clinic.",
+    },
+    {
+      question: "How safe is sedation dentistry?",
+      answer:
+        "Oral sedation has been used for over 30 years and is very safe and comfortable. Dentists first review the patient’s medical history and explain how sedation works to ensure comfort. During the procedure, oxygen saturation, blood pressure, and heart rate are continuously monitored. A reversal agent is available to end the sedation effect within 30 seconds if needed.",
+    },
+    {
+      question: "What are the side effects?",
+      answer:
+        "Side effects such as hiccups and dry mouth may occur after the treatment. However, most patients are unaware of the sedation process and experience its benefits without discomfort. Sedation is especially helpful for patients who have difficulty getting numb.",
+    },
+  ];
+
   return (
     <div>
-        <div className="container my-5">
-      {/* Header Section */}
-      <div className="row align-items-center">
-        <div className="col-lg-8">
-          <h1 className="display-5 fw-bold mb-4" style={{color:"#00a3ff"}}>
+      {/* Centered Image and Title */}
+      <div className="text-center my-5">
+        <img
+          src={sedationtimg}
+          alt="Sedation Dentistry"
+          className="img-fluid rounded shadow mb-4"
+          style={{ maxWidth: "300px" }}
+        />
+        <h1 className="fw-bold" style={{ color: "#00a3ff" }}>
           Sedation Dentistry
-          </h1>
-          <h3 className="fw-bold">What do you mean by sedation?</h3>
-          <p>
-          Sedation dentistry helps one to snooze virtually during the visits to the dental clinic. It helps to go through the entire dental procedure comfortably and safely.
-          </p>
-          
-        </div>
-        <div className="col-lg-4 text-center">
-          <img
-            src={sedationtimg} 
-            alt="Maxillofacial Surgery"
-            className="img-fluid rounded shadow"
-          />
-        </div>
+        </h1>
       </div>
 
-      {/* Section 2: Oral Treatment */}
-      <section className="mt-5">
-        <h3 className="fw-bold">Who are the best candidates of sedation dentistry?</h3>
-          <ul className="custom-list">
-          <li>
-          People who gag
-          </li>
-          <li>
-          Have problem in getting numb
-          </li>
-          <li>
-          Have fear of the dental treatment
-            
-          </li>
-          <li>
-          Who have sensitive teeth
-          </li>
-          <li>
-          Who have experienced traumatic dental procedure
-          </li>
-          <li>
-          Who hate shots and needle
-          </li>
-          <li>
-          Who do not like the smell, noise and taste of the dental treatment
-          </li>
-        </ul>
-        <h3 className="fw-bold">Does one experience any pain?</h3>
-        <p>People feel very comfortable and no pain while the dental treatment is going on and feel even better after the treatment is over.
-          </p>
-          <h3 className="fw-bold">What type of sedation is used?</h3>
-        <p>General anesthesia is one type of sedation which everyone thinks off, but this requires a machine for breathing. For oral surgeries IV sedation is used. The most convenient, safe and comfortable is oral sedation. In this a pill is given to the patient a few hours prior to the visit to the dental clinic.
-          </p>
-          <h3 className="fw-bold">What are different levels of sedation?</h3>
-        <p style={{marginBottom:"1px"}}><span style={{color:"#04abe3",fontWeight:"bold"}}>Mild Sedation </span>in which one is conscious and responds to verbal command. Heart functioning and breathing is normal and unaffected .Coordination and cognitive functions can be impaired.
-          </p>
-          <p style={{marginBottom:"1px"}}><span style={{color:"#04abe3",fontWeight:"bold"}}>Moderate Sedation</span> in which there is depression of consciousness and the patient is forced to respond to command. Breathing and functioning of heart is not affected.
-          </p>
-          <p style={{marginBottom:"1px"}}><span style={{color:"#04abe3",fontWeight:"bold"}}>Deep Sedation</span> in which patient cannot be easily aroused and there is depression of consciousness. Patient responds purposefully. Breathing may be impaired, and heart functions normally.
-          </p>
-          <p ><span style={{color:"#04abe3",fontWeight:"bold"}}>General Anesthesia</span> in which there is complete loss of consciousness and the patient cannot be aroused. Breathing is impaired and there is the need of ventilator. Heart functioning can be impaired.
-          </p>
-          <h3 className="fw-bold">Who administers the sedation?</h3>
-        <p>We have our anaesthetist specifically trained for dental sedation and general anaesthesia to provide sedation for our clients.
-          </p>
-          <h3 className="fw-bold">Does a person remember anything of the treatment?</h3>
-        <p>After the treatment the patient forgets the memories of the dental clinic.
-          </p>
-          <h3 className="fw-bold">How safe is sedation dentistry?</h3>
-        <p>Oral sedation has been used for more than 30 years. It is very safe and comfortable. Firstly the dentist checks individuals’ medical past and then he makes the patient understand how sedation will work, so that the patient feels comfortable. During the treatment the patient’s oxygen saturation, blood pressure and heart rate are monitored continuously. Dentists also have reversal agent that ends the effect of sedation within 30 seconds.
-          </p>
-          <h3 className="fw-bold">What are the side effects?</h3>
-        <p>Side effects such as hiccups and dryness of the mouth can be felt after the treatment is over. But if one does not experience such side effects, he will be completely unaware of sedation. Sedation is very beneficial for people who face problem in getting numb.
-          </p>
-      </section>
-
-      
+      {/* FAQ Section */}
+      <div className="container my-5">
+        <h2 className="text-center mb-4">Have Some Questions?</h2>
+        <div className="faq">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? "active" : ""} mb-3`}
+              onClick={() => toggleAnswer(index)}
+            >
+              <div className="faq-question d-flex justify-content-between align-items-center p-3">
+                <span>{item.question}</span>
+                <span className="faq-icon">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
+              </div>
+              {activeIndex === index && (
+                <div className="faq-answer p-3">{item.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-      
-      
-    </div>
-  )
-}
+  );
+};
 
-export default Sedationdentistry
+export default SedationDentistry;

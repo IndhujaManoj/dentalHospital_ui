@@ -1,38 +1,50 @@
-/* Custom List Styling */
-.custom-list {
-    padding-left: 1.5rem;
-    list-style: none;
-  }
-  .container p{
-    font-size: 16px;
-    line-height: 2rem;
-    text-align:justify;
-  }
-  
-  .custom-list li {
-    margin-bottom: 1rem;
-    position: relative;
-    font-size: 16px;
-    text-align: justify;
-  }
-  
-  .custom-list li::before {
-    content: "•"; /* Custom bullet */
-    position: absolute;
-    left: -1.5rem;
-    top: 0;
-    color:black; /* Bullet color */
-    font-size: 1.2rem;
-  }
-  
-  /* Responsive Styling */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2rem;
-    }
-  
-    .img-fluid {
-      margin-top: 1rem;
-    }
-  }
-  
+/* Centered Title and Image */
+.text-center img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* FAQ Section */
+.faq {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.faq-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active {
+  border-color: #00a3ff;
+  background: #f1faff;
+}
+
+.faq-question {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.faq-icon {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00a3ff;
+}
+
+.faq-answer {
+  font-size: 16px;
+  color: #555;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.faq-item:hover {
+  background-color: #f1faff;
+  border-color: #00a3ff;
+}

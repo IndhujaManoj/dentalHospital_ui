@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Smile.css";
-import smilebanner from "../assets/smilegallerybanner.jpg";
+import smilebanner from "../assets/contactbanner.jpg";
 import Appointment from "./Appointment";
 import axios from "axios";
 

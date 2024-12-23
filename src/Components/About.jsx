@@ -1,8 +1,8 @@
 import React from 'react'
 import about from "../assets/servicepicture.jpg"
 import "./About.css"
-import doctor1 from "../assets/doctor1.jpeg";
-import doctor2 from "../assets/doctor2.jpeg";
+import doctor1 from "../assets/virtualtour-4.jpg";
+// import doctor2 from "../assets/doctor2.jpeg";
 import Service from "../Components/Service"
 
 
@@ -16,11 +16,11 @@ const About = () => {
         </div>
         <div className="col-md-6">
           <h2 className="display-4">We Provide</h2>
-          <h3 className="mb-4">Total Health Care</h3>
+          <h3 className="mb-4">Complete Dental Care</h3>
           <div className='aboutcontent'>
-          <p>We provide the most full medical services, so every person could have the opportunity to receive qualitative medical help.</p>
-          <p>Clinical excellence, diversity, and access to innovative technology are all hallmarks of the graduate medical education experience at Careex. Our residents, fellows, and renowned staff share their experience working at Careex.</p>
-          <p><strong>We try to do our best to help you and provide with a high-quality services.</strong></p></div>
+          <p>We offer a wide range of dental services, ensuring that everyone has access to high-quality dental care and treatments.</p>
+          <p>Clinical excellence, patient-centered care, and the latest in dental technology are key aspects of the care experience at Selvan Dental Hospital. Our experienced dentists and dedicated staff work together to deliver exceptional dental services.</p>
+          <p><strong>We strive to provide the best care possible and ensure a comfortable experience with top-quality dental treatments..</strong></p></div>
           <a href="/contact-us" className=" serbtn btn btn-lg" style={{backgroundColor:"#045c7c", color:"white"}}>Get in Touch</a>
         </div>
       </div>
@@ -47,29 +47,39 @@ const About = () => {
     </section>
 
     <section className="about-us">
-      <h1 className='abus'>About Us</h1>
-      <h2>Management Team</h2>
-      <div className="team-member">
-        <img src={doctor1} alt="Dr. M. Charles Prem Kumar" className="member-photo" />
-        <div className="member-info">
-          <h3>Dr. M. Charles Prem Kumar</h3>
-          <p><strong>Founder & Owner, Managing Director</strong></p>
-          <p>
-            Dr. Charles, Dental Surgeon who graduated from Annamalai University in the year 1999, is passionate about providing quality dental services to the society. He founded Charli Dental in the year 2009. Charli Dental is committed towards providing excellent services in dentistry.
-          </p>
-        </div>
-      </div>
-      <div className="team-member">
-        <img src={doctor2} alt="Mrs. Jasmine S.K Jeba Priya" className="member-photo" />
-        <div className="member-info">
-          <h3>Mrs. Jasmine S.K Jeba Priya</h3>
-          <p><strong>Executive Director, Charli Dental Chain of Clinics</strong></p>
-          <p>
-            Mrs. Jasmine, the Executive Director of Charli Dental, is basically an IT professional with rich experience in IT business for nearly 13 years. Mrs. Jasmine, a post-graduate in computer science, has been the Executive Director of Charli Dental since July 2014.
-          </p>
-        </div>
-      </div>
-    </section>
+  <h1 className="abus">About Us</h1>
+  <h2>Management Team</h2>
+  <div className="team-member">
+    <div className="member-photo-container">
+      <img 
+        src={doctor1} 
+        alt="Portrait of Dr. M. Charles Prem Kumar, Founder and Managing Director of Charli Dental" 
+        className="member-photo" 
+      />
+    </div>
+    <div className="member-details">
+      <h3 style={{color:"black"}}>Dr.Shabin jhon BDS,FRCD</h3>
+      <p style={{color:"black"}}><strong>Founder & Owner, Managing Director</strong></p>
+      <p style={{textAlign:"justify"}}>
+        Dr. Charles, a Dental Surgeon who graduated from Annamalai University in 1999, is passionate about providing quality dental services to society. He founded Charli Dental in 2009, which is committed to excellence in dentistry.
+      </p>
+      <h4 className='member-subtitle'>Areas of Expertise</h4>
+      <ul className="expertise-list">
+        <li>Providing quality dental services</li>
+        <li>Commitment to excellence in dentistry</li>
+        <li>Dental health education and outreach</li>
+        <li>Leadership in the dental industry</li>
+      </ul>
+      <h4 className='member-subtitle'>Education</h4>
+      <ul className="education-list">
+        <li>Bachelor of Dental Surgery, Annamalai University (1999)</li>
+        <li>Specialized training in dental health practices</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
     <Service/>
     
       

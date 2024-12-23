@@ -1,49 +1,60 @@
 // src/Footer.js
 import React from 'react';
 import './Footer.css';
+import footlogo from "../assets/SelvamDental_logo.png"
+import {  FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h2 className="footer-title">Careex</h2>
+          <img src={footlogo} alt="footerlogo" className="footer-title" style={{width:"190px"}}/>
           <div className='footenlists'>
           <p>
-            Careex is a medical center, which provides a wide range of medical
-            services for adults and kids. We take care about your health in a
-            professional way!
+          Selvan Dental Hospital offers a comprehensive range of dental services for both adults and children.
           </p>
           </div>
         </div>
         <div className="footer-section">
           <h2 className="footer-title">Head Office</h2>
           <div className='footenlists'>
-          <p>4096 N Highland St, Arlington</p>
-          <p>VA 32101, USA</p>
-          <p><a style ={{color:"#04abe3"}} href="mailto:info@demolink.com">info@demolink.com</a></p>
-          <p><a style={{color:"yellow", fontWeight:"bold"}} href="tel:80012345678">800 1234 56 78</a></p>
-          <p>Mon-Thu: 9:30 – 21:00</p>
-          <p>Fri: 6:00 – 21:00</p>
-          <p>Sat: 10:00 – 15:00</p>
+          <p>NGL to TVM main road</p>
+          <p>Swamiyarmadam</p>
+          <p><a style ={{color:"#04abe3"}} href="mailto:info@demolink.com">selvamdental25@gmail.com</a></p>
+          <p><a style={{color:"yellow", fontWeight:"bold"}} href="tel:80012345678">9585119192</a></p>
+          <p>Mon-Sat : 9:30 am – 1:30 pm</p>
+          <p>Mon-Sat : 4:00 pm – 10:00 pm</p>
+          <p>Sun : 5:00pm – 10:00pm</p>
           </div>
         </div>
         <div className="footer-section">
           <h2 className="footer-title">Latest Posts</h2>
           <div className='footenlists'>
-          <p>Sed elementum sodales <span>March 25, 2023</span></p>
-          <p>Basic dental care <span>March 22, 2023</span></p>
-          <p>First signs of Gum Disease <span>March 21, 2023</span></p>
+          <a href="#" className="text-white mx-2">
+                <FaLinkedin />
+              </a>
+              <a href="#" className="text-white mx-2">
+                <FaTwitter />
+              </a>
+              <a href="#" className="text-white mx-2">
+                <FaFacebook />
+              </a>
+              <a href="#" className="text-white mx-2">
+                <FaSquareInstagram />
+              </a>
           </div>
         </div>
+      
         <div className="footer-section">
           <h2 className="footer-title">Quick Links</h2>
           <div className='footenlists'>
-          <p><a href="#">Home</a></p>
-          <p><a href="#">About</a></p>
-          <p><a href="#">Doctors</a></p>
-          <p><a href="#">Services</a></p>
-          <p><a href="#">Contacts</a></p>
+          <p><a href="/">Home</a></p>
+          <p><a href="/about-us">About</a></p>
+          <p><a href="/treatments">Treatments</a></p>
+          <p><a href="/smile-gallery">Smilegallery</a></p>
+          <p><a href="/contact-us">Contact</a></p>
           </div>
         </div>
       </div>

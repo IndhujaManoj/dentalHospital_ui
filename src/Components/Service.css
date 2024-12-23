@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .service-section {
-  font-family: "PT Serif", serif;
   margin: 20px 0;
   overflow: hidden;
 }
@@ -26,7 +25,10 @@
 /* Right side: Review carousel */
 .service-carousel {
   text-align: center;
+  
 }
+.service-carousel h2{
+  font-family: "PT Serif", serif;}
 
 .review-box {
   position: relative;
@@ -60,11 +62,13 @@
 .review-details h3 {
   font-weight: bold;
   margin-bottom: 5px;
+  
 }
 
 .review-details p {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
+  
 }
 
 /* Navigation Buttons (Optional, add buttons if needed) */
@@ -105,6 +109,11 @@
 
 /* Small screens (up to 767px) */
 @media only screen and (max-width: 767px) {
+  .img-fluid{
+    padding-left:0;
+    padding-right: 30px;
+  }
+  
   .service-row {
     flex-direction: column;
   }

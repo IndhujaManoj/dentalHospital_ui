@@ -140,6 +140,91 @@
     margin-top: 10px;
     
   }
+  /* Wrapper for the card to give perspective for the 3D effect */
+.service-card-wrapper {
+  perspective: 1000px;
+}
+
+/* Service card styles (same for front and back) */
+.service-card {
+  width: 100%;
+  height: 250px;  /* Same height for all cards */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;  /* Maintain 3D space */
+  transition: transform 0.6s, background-color 0.3s;  /* Smooth flip and background color change */
+  background-color: #f8f9fa; /* Default background color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Light shadow */
+}
+
+/* Hover effect: Flip the card horizontally */
+.service-card:hover {
+  transform: rotateY(180deg);  /* Card flips on hover */
+  background-color: #dfe6e9;  /* Change background color */
+}
+
+/* Front of the card */
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;  /* Prevent back side from showing when flipped */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.service-card-front {
+  flex-direction: column;
+}
+
+.service-card-back {
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);  /* Position the back face */
+  color: #333;
+}
+
+/* Styling for the front */
+.service-card .icon img {
+  height: 100px;
+  width: 100px;
+}
+
+.service-card .servhead {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.service-card p {
+  margin-top: 10px;
+}
+
+/* Optional: Styling for the back face of the card */
+.service-card-back h5 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.service-card-back p {
+  font-size: 1rem;
+  color: #555;
+}
+
+  
   
   /* Responsive Adjustments */
   @media only screen and (max-width: 768px) {

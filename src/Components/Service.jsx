@@ -58,7 +58,7 @@ const Service = () => {
       <div className="container-service">
         <div className="service-row row align-items-center">
           <div className="col-md-6 service-image">
-            <img src={servicepicture} alt="Doctor" className="img-fluid"  style={{height:""}}/>
+            <img src={servicepicture} alt="Doctor" className="img-fluid"  style={{height:"500px",width:"100%",paddingLeft:"50px"}}/>
           </div>
           <div className="col-md-6 service-carousel">
             <h2>What Our Clients Say</h2>

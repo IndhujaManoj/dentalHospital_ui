@@ -6,7 +6,7 @@ import { IoMdMail } from "react-icons/io";
 import { FaPhoneVolume } from "react-icons/fa6";
 import axios from "axios"; // Import axios for making the API request
 
-import contactbanner from "../assets/contactbanner.png";
+import contactbanner from "../assets/contactimage.jpg";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -57,18 +57,18 @@ const Contact = () => {
         <div className="row">
           <div className="col-md-6">
             <h2 className="contacthead">Contact Details</h2>
-            <p>If you are interested in working with us then please drop us a line, we would love to hear from you.</p>
+            <p style={{fontSize:"16px"}}>If you are interested in working with us then please drop us a line, we would love to hear from you.</p>
             <ul className="list-unstyled contactContainer">
-              <li><i><FaLocationDot style={{ color: "#045c7c" }} /></i><span style={{ paddingLeft: "10px" }}>121 Wallstreet Street, New York, USA</span></li>
-              <li><i><IoMdMail style={{ color: "#045c7c" }} /></i> <span style={{ paddingLeft: "10px" }}>info@demolink.com</span></li>
-              <li><i ><FaPhoneVolume style={{ color: "#045c7c" }} /></i><span style={{ paddingLeft: "10px" }}> +800 1234 56 78</span></li>
+              <li><i><FaLocationDot style={{ color: "#045c7c" }} /></i><span style={{ paddingLeft: "10px" }}>NGL to TVM main road, Swamiyarmadam</span></li>
+              <li><i><IoMdMail style={{ color: "#045c7c" }} /></i> <span style={{ paddingLeft: "10px" }}>selvamdental25@gmail.com</span></li>
+              <li><i ><FaPhoneVolume style={{ color: "#045c7c" }} /></i><span style={{ paddingLeft: "10px" }}>9585119192</span></li>
             </ul>
           </div>
           <div className="col-md-6">
             <h2 className="contacthead">Drop Us A Line</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Name*</label>
+                <label htmlFor="name" style={{fontSize:"16px"}}>Name*</label>
                 <input
                   type="text"
                   className="form-control"
@@ -79,7 +79,7 @@ const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email*</label>
+                <label htmlFor="email" style={{fontSize:"16px"}}>Email*</label>
                 <input
                   type="email"
                   className="form-control"
@@ -90,7 +90,7 @@ const Contact = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message" style={{fontSize:"16px"}}>Message</label>
                 <textarea
                   className="form-control"
                   id="message"
@@ -111,19 +111,19 @@ const Contact = () => {
       </div>
       <Appointment />
 
-      <div className="row mt-4">
-        <div className="col-12">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.377610978428!2d77.6894832146183!3d8.719720893737234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b041210cb7e98b3%3A0x9e4d2b3d8e07313e!2sCharli%20Dental!5e0!3m2!1sen!2sin!4v1614185228461!5m2!1sen!2sin"
-            width="100%"
-            height="450"
-            className="border rounded"
-            allowFullScreen=""
-            loading="lazy"
-            title="Charli Dental Map"
-          ></iframe>
+      <div className="row mt-4 ">
+          <div className="col-12">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24593.54767785553!2d77.24871727241343!3d8.29004117164459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0455f28b99aa0f%3A0x99f0bed9014642b!2sSwamiyar%20Madam%2C%20Tamil%20Nadu%20629179!5e1!3m2!1sen!2sin!4v1734878841076!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              className="border rounded"
+              allowFullScreen=""
+              loading="lazy"
+              title="Charli Dental Map"
+            ></iframe>
+          </div>
         </div>
-      </div>
     </>
   );
 };

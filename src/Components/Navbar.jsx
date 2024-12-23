@@ -18,15 +18,15 @@ const Navbar = () => {
             <div className="top_left d-flex align-items-center flex-wrap">
               <span className="me-3 d-flex align-items-center">
                 <FaPhoneAlt className="me-2" />
-                +800 123 45 67
+                91+ 9585119192
               </span>
               <span className="me-3 d-flex align-items-center">
                 <IoMail className="me-2" />
-                info@demolink.com
+                selvamdental25@gmail.com
               </span>
               <span className="d-flex align-items-center">
                 <FaAddressCard className="me-2" />
-                121 Wallstreet Street, NY, USA
+                Swamiyarmadam
               </span>
             </div>
             <div className="social-icons d-flex align-items-center">
@@ -52,8 +52,8 @@ const Navbar = () => {
             <a className="navbar-brand d-flex align-items-center" href="/">
               <img
                 src={logo}
-                alt="Careex Logo"
-                className="me-2"
+                alt="dental Logo"
+                className="sellogo"
                 style={{ height: "70px", width: "300px" }}
               />
             </a>

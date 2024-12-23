@@ -1,118 +1,147 @@
 
 .display-4, .mb-4{
-    font-family: "PT Serif", serif;
+  font-family: "PT Serif", serif;
 }
 /* .serbtn{
-    background-color:#04abe3;
-    border-radius:25px;
-    padding:15px 25px 15px 25px;
+  background-color:#04abe3;
+  border-radius:25px;
+  padding:15px 25px 15px 25px;
 } */
 .serbtn:hover{
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 .aboutcontent{
-    text-align: justify;
+  text-align: justify;
+  font-size: 1rem;
+}
+.abus{
+font-family: "PT Serif", serif;
+
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: #f6fcff;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #f6fcff;
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-  
-  .feature {
-    flex: 1;
-    margin: 20px;
-    max-width: 300px;
-    min-width: 250px;
-  }
-  
-  .feature h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-    font-family: "PT Serif", serif;
-    margin:auto;
-    font-weight: bolder;
-  }
-  
-  .feature p {
-    font-size: 1em;
-    color: #555;
-    margin-top: 20px;
-  }
-  /* src/AboutUs.css */
+.feature {
+  flex: 1;
+  margin: 20px;
+  max-width: 300px;
+  min-width: 250px;
+}
+
+.feature h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  font-family: "PT Serif", serif;
+  margin:auto;
+  font-weight: bolder;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #555;
+  margin-top: 20px;
+}
+/* src/AboutUs.css */
 .about-us {
-    max-width: 1200px;
-    margin:auto;
-    padding: 20px;
-  }
+  padding: 20px;
+  padding-left: 0;
+  font-family: Segoe UI;
   
-  .about-us h1, .about-us h2 {
-    text-align: center;
-    color: #2C3E50;
-  }
+}
+
+.about-us h1,
+.about-us h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   
+  flex-wrap: wrap;
+  margin-top:50px;
+   /* Allows wrapping on smaller screens */
+}
+
+.member-photo-container {
+  flex: 1;
+  max-width: 100%;
+  text-align: center;
+}
+.member-subtitle{
+  color:black
+}
+.member-subtitle{
+  font-weight: bold;
+}
+.member-photo {
+  width: 80%;
+  height: 440px;
+  border-radius: 10px;
+  object-fit: cover;
+  
+  margin: 0 auto;
+}
+
+.member-details {
+  color: rgb(79, 78, 78);
+  padding: 10px;
+  flex: 1;
+  max-width: 45%;
+  font-size: 1em;
+  line-height: 1.6rem;
+}
+
+.expertise-list,
+.education-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.member-details h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
   .team-member {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px 0;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap:20px;
+    
   }
-  
+
+  .member-photo-container{
+    max-width: 100%; /* Take full width */
+    text-align: center;
+
+  }
+  .member-details {
+    max-width: 100%; /* Take full width */
+    text-align: left;
+  }
+
   .member-photo {
-    flex: 1 1 150px;
-    max-width: 250px;
-    margin-right: 20px;
-    border-radius: 8px;
-    height: 300px;
+    max-width: 100%; /* Make the image responsive */
   }
-  
-  .member-info {
-    flex: 2 1 300px;
-    width: fit-content;
-  }
-  
-  .member-info h3 {
-    color: #2C3E50;
-    margin: 0;
-  }
-  
-  .member-info p {
+}
+
+
+
+@media (max-width: 768px) {
+  .feature {
+    max-width: 100%;
     margin: 10px 0;
-    font-size: 18px;
   }
-  .abus{
-    font-family: "PT Serif", serif;
-    font-weight: bolder;
-  }
-  
-  @media (max-width: 768px) {
-    .team-member {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .member-photo {
-      margin: 0 0 20px 0;
-    }
-  
-    .member-info {
-      flex: 1 1 auto;
-    }
-  }
-  
-  
-  @media (max-width: 768px) {
-    .feature {
-      max-width: 100%;
-      margin: 10px 0;
-    }
-  }
-  
+}

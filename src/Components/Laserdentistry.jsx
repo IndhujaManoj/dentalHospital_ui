@@ -1,78 +1,100 @@
-import React from 'react'
-import "./Oralandmaxillofacial.css"
-import lazerdentimg from "../assets/laserdentistry.png"
+import React, { useState } from "react";
+import "./Oralandmaxillofacial.css";
+import lazerdentimg from "../assets/laserdentistry.png";
+
 const Laserdentistry = () => {
-  return (  
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleAnswer = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const faqData = [
+    {
+      question: "What is laser dentistry?",
+      answer:
+        "Laser dentistry is an effective and precise way of performing various dental procedures. It depends on the skill of the dentist to control the exposure of laser on the gum as well as the teeth surface, and control over power output. Special care is required as the laser should not damage the surrounding tissues.",
+    },
+    {
+      question: "What are the benefits of laser dentistry?",
+      answer: (
+        <ul className="custom-list">
+          <li>It does not damage the surrounding tissues.</li>
+          <li>Some laser dentistry procedures are done without anesthesia.</li>
+          <li>Chances of bacterial infection are less because the area on which work is done is exposed to a high light beam.</li>
+          <li>The procedures which use soft tissues laser do not require stitches.</li>
+          <li>There is very less bleeding, as the high light beam results in clotting of blood which reduces blood loss.</li>
+          <li>Wounds heal faster and there is regeneration of tissues.</li>
+        </ul>
+      ),
+    },
+    {
+      question: "How does the dentist use the technique of laser dentistry?",
+      answer:
+        "Dentists use the hydrophotonics technique which combines laser energy and a spray of water to perform various procedures on gums, teeth, and teeth bones. The laser energy is absorbed by water molecules in the tooth tissues, causing an explosion that moves apart the tooth particles.",
+    },
+    {
+      question: "Does laser dentistry help in curing gum diseases?",
+      answer:
+        "Yes, laser dentistry helps to treat gum diseases by targeting and vaporizing the gum tissues. It is better than traditional procedures that cut tissues using scalpels. Laser vaporizes only diseased tissues, leaving healthy tissues intact.",
+    },
+    {
+      question: "How much recovery time is required after laser gum treatment?",
+      answer:
+        "Laser automatically forms clots and seals blood vessels as well as nerve endings. One can return to work immediately after the treatment, with no downtime required, making it very convenient for patients.",
+    },
+    {
+      question: "Is laser used for all dentistry?",
+      answer:
+        "Lasers reflect light with the help of a mirror, making it difficult to remove silver (amalgam) fillings as there is a chance of mirror fracture. The conventional drill is used to remove amalgam fillings, after which laser can remove decay and the cavity for placing tooth-colored fillings. A combination of conventional drill and laser is used for extensive work like crown preparation.",
+    },
+    {
+      question: "How costly is the laser therapy?",
+      answer:
+        "The cost depends on the skill of the dentist, the clinic's location, and individual requirements. In some cases, laser therapy is cheaper than gum surgeries. Some insurance companies may cover laser therapy, so it's best to check before undergoing treatment.",
+    },
+  ];
+
+  return (
     <div>
-        <div className="container my-5">
-      {/* Header Section */}
-      <div className="row align-items-center">
-        <div className="col-lg-8">
-          <h1 className="display-5 fw-bold mb-4" style={{color:"#00a3ff"}}>
+      {/* Centered Image and Title */}
+      <div className="text-center my-5">
+        <img
+          src={lazerdentimg}
+          alt="Laser Dentistry"
+          className="img-fluid rounded shadow mb-4"
+          style={{ maxWidth: "300px" }}
+        />
+        <h1 className="fw-bold" style={{ color: "#00a3ff" }}>
           Laser Dentistry
-          </h1>
-          <h3 className="fw-bold">What is laser dentistry?</h3>
-          <p>
-          Laser dentistry is an effective and precise way of performing various dental procedures .Laser dentistry has the potential to improve various dental procedures, but all depends on the personnel skill of the dentist i.e. his ability and skill to control the exposure of laser on the gum as well as the teeth surface, and control over power output. Special care is required as the laser should not damage the surrounding tissues.
-          </p>
-        </div>
-        <div className="col-lg-4 text-center">
-          <img
-            src={lazerdentimg} 
-            alt="Maxillofacial Surgery"
-            className="img-fluid rounded shadow"
-          />
-        </div>
+        </h1>
       </div>
 
-      {/* Section 2: Oral Treatment */}
-      <section className="mt-5">
-        <h3 className="fw-bold">What are benefits of laser dentistry?</h3>
-        <p>Some benefits of laser dentistry are:-
-          </p>
-          <ul className="custom-list">
-          <li>
-          it does not damage the surrounding tissues
-          </li>
-          <li>
-          some laser dentistry procedures are done without anesthesia
-          </li>
-          <li>
-          chances of bacterial infection are less because the area on which work is done is exposed to high light beam
-            
-          </li>
-          <li>
-          The procedures which use soft tissues laser do not require stitches
-          </li>
-          <li>
-          There is very less bleeding, because high light beam results in clotting of blood which reduces blood loss.
-          </li>
-          <li>
-          Wounds heal up faster and there is regeneration of tissues.
-          </li>
-        </ul>
-        <h3 className="fw-bold">How does the dentist use the technique of laser dentistry?</h3>
-        <p>The dentists use the  hydrophotonics technique which uses the combination of laser energy as well as spray of water that help  in performing various procedures on gums, teeth and teeth bones more easily. The laser energy is absorbed by molecules of water present in the tooth tissues. The laser energy causes a explosion because the water molecules expand which in turn moves apart the tooth particle.
-          </p>
-          <h3 className="fw-bold">Does laser dentistry help in curing gum diseases?</h3>
-        <p>Yes, laser dentistry helps to treat gum diseases by first targeting and then vaporizing the gum tissues.Laser dentistry is very much better than the traditional procedures that cut the tissues using scalpels. Laser is used to vaporize only diseased tissues which leave the tissues healthy and free of diseases.
-          </p>
-          <h3 className="fw-bold">How much recovery time is required after laser gum treatment?</h3>
-        <p>Laser automatically forms clots/it seals the blood vessels as well the nerve ending. One can return back to work immediately after the treatment and there is no down time. Hence it is very convenient and comfortable for the patient as there is no recovery time.
-          </p>
-          <h3 className="fw-bold">Is laser used for all dentistry?</h3>
-        <p>Lasers reflect light with the help of a mirror hence it gets difficult /impossible to remove the silver filling i.e. amalgam filling as there are chances of fracture of mirror. The conventional drill removes the amalgam filling in first instance. Then laser is used to remove decay and the cavity that allows the placement of tooth color filling. Combination of conventional drill and laser is used for extensive works such as preparation of crown.
-          </p>
-          <h3 className="fw-bold">How costly is the laser therapy?</h3>
-        <p>The cost factor depends on the personnel skill of the dentist i.e. how efficiently and skillfully the light energy is used, the location of the dental clinic as well as individual requirement. In some cases the laser therapy has proved to be much cheaper than gum surgeries. Some insurance companies also cover laser therapy, but this should be checked before going for the treatment.
-          </p>
-      </section>
-
-      
+      {/* FAQ Section */}
+      <div className="container my-5">
+        <h2 className="text-center mb-4">Have Some Questions?</h2>
+        <div className="faq">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? "active" : ""} mb-3`}
+              onClick={() => toggleAnswer(index)}
+            >
+              <div className="faq-question d-flex justify-content-between align-items-center p-3">
+                <span>{item.question}</span>
+                <span className="faq-icon">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
+              </div>
+              {activeIndex === index && (
+                <div className="faq-answer p-3">{item.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-      
-    </div>
-  )
-}
+  );
+};
 
-export default Laserdentistry
+export default Laserdentistry;

@@ -22,6 +22,7 @@ import RootCanaltreatment from "./Components/Rootcanaltreatment";
 import Brushingtechniques from "./Components/Brushingtechniques";
 import Teethscaling from "./Components/Teethscaling";
 import Dentalcrowns from "./Components/Dentalcrowns";
+import Dentures from "./Components/Dentures";
 import Login from "./Components/admin/Login";
 import Dashboard from "./Components/admin/Dashboard";
 import AppointmentsPage from "./Components/admin/AppointmentsPage";
@@ -77,6 +78,7 @@ function AppContent() {
         <Route path="/treatments/brushing-techniques" element={<Brushingtechniques />} />
         <Route path="/treatments/teeth-scaling" element={<Teethscaling />} />
         <Route path="/treatments/dental-crowns" element={<Dentalcrowns />} />
+        <Route path="/treatments/dentures" element={<Dentures />} />
 
         {/* Admin Routes */}
         <Route

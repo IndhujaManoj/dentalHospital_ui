@@ -1,89 +1,107 @@
-import React from 'react';
+import React, { useState } from "react";
 import "./Oralandmaxillofacial.css";
 import dentalimplantsimg from "../assets/dentalimplants.png";
 
-const Dentalimplants = () => { 
-  return (
-    <div>
-      <div className="container my-5">
-        {/* Header Section */}
-        <div className="row align-items-center">
-          <div className="col-lg-8">
-            <h1 className="display-5 fw-bold mb-4" style={{ color: "#00a3ff" }}>
-              Dental Implants
-            </h1>
-            <h3 className="fw-bold">What is the meaning of dental implant?</h3>
-            <p>
-              A dental implant is a manmade replacement in place of the natural teeth which enables a person to have fixed teeth. Dental implants are different from transplants taken from others. What category of dental transplant is suitable for a patient depends on the individual need and condition of the teeth. An x-ray is required to check the number of bones remaining and the space available in the mouth. The dentist performs an examination before finalizing which type of implant should be done.
-            </p>
-          </div>
-          <div className="col-lg-4 text-center">
-            <img
-              src={dentalimplantsimg}
-              alt="Dental Implants"
-              className="img-fluid rounded shadow"
-            />
-          </div>
-        </div>
+const Dentalimplants = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
 
-        {/* Section 2: Candidates */}
-        <section className="mt-5">
-          <h3 className="fw-bold">Who are the candidates for dental implant?</h3>
-          <p>
-            People who are missing teeth, whether it be one or all, are candidates for an implant. If a person is missing one or a few teeth, then dental implants along with a crown/bridge can be used to replace the missing teeth. These manmade teeth function as well as natural teeth, and there is no further loss of bones and decay. If a person is missing all teeth, then an implant is used to anchor loose dentures. In some cases, when bones are lost, bones can be regenerated with the technique of bone expansion, which further helps in implants.
-          </p>
-        </section>
+  const toggleAnswer = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
 
-        {/* Section 3: Cost */}
-        <section className="mt-5">
-          <h3 className="fw-bold">How much does an implant cost?</h3>
+  const faqData = [
+    {
+      question: "What is the meaning of dental implant?",
+      answer:
+        "A dental implant is a manmade replacement in place of the natural teeth, enabling a person to have fixed teeth. Dental implants differ from transplants taken from others. The type of implant suitable for a patient depends on individual needs and teeth conditions. An x-ray is typically required to assess bone density and space availability. Dentists perform examinations to finalize the type of implant required.",
+    },
+    {
+      question: "Who are the candidates for dental implant?",
+      answer:
+        "People missing one or all teeth are candidates for an implant. For missing one or a few teeth, dental implants with a crown or bridge can replace the gap. For those missing all teeth, implants can anchor loose dentures. Bone regeneration techniques can be used in cases of bone loss, aiding implant success.",
+    },
+    {
+      question: "How much does an implant cost?",
+      answer:
+        "The cost of an implant depends on the individual case after thorough examination. Factors like the dentist’s skill, clinic location, and specific patient requirements influence the price.",
+    },
+    {
+      question: "How much time is required?",
+      answer:
+        "Dental implants are advanced procedures, often taking 4-9 months or longer, depending on the case. Temporary teeth are provided during this time, ensuring the patient is never without teeth.",
+    },
+    {
+      question: "Is the treatment painful?",
+      answer:
+        "There is minor discomfort during the procedure, which is minimized with sedation and anesthesia. Most patients experience pain for 2-3 days post-surgery, which can be managed with prescribed medications.",
+    },
+    {
+      question: "Are there any chances of rejection?",
+      answer:
+        "The body does not reject dental implants like soft tissue transplants. Failures may occur due to misalignment, health conditions, or improper care. Dental implants are made of titanium, a biocompatible material widely used in medical replacements.",
+    },
+    {
+      question: "When can I resume work?",
+      answer:
+        "Patients may experience discomfort and swelling on the day of surgery and the following day. Strenuous activities should be avoided. The decision to resume work depends on the individual's comfort and recovery.",
+    },
+    {
+      question: "What side effects does one face without a dental implant?",
+      answer: (
+        <>
           <p>
-            The cost can be determined after a thorough examination and recording of the individual case. Moreover, the personal skill of the dentist, location of the clinic, and individual requirements determine the cost of an implant.
+            Without a dental implant, various complications can arise, such as:
           </p>
-        </section>
-
-        {/* Section 4: Time Required */}
-        <section className="mt-5">
-          <h3 className="fw-bold">How much time is required?</h3>
-          <p>
-            Dental implant is an advanced procedure, hence it takes time of 4-9 months or even more, depending upon the individual case. The dentist provides temporary teeth during this period, and the patient is never without teeth.
-          </p>
-        </section>
-
-        {/* Section 5: Pain and Rejection */}
-        <section className="mt-5">
-          <h3 className="fw-bold">Is the treatment painful?</h3>
-          <p>
-            There is a little discomfort at the time of the procedure, but patient sedation and anesthesia are used to reduce the discomfort. Most patients experience pain for 2-3 days after the implant/surgery. Dentists also provide medicines to reduce the pain and avoid any type of discomfort.
-          </p>
-          <h3 className="fw-bold">Are there any chances of rejection?</h3>
-          <p>
-            The body can reject soft tissue transplants (e.g., kidney, lung, heart transplants), but there is no rejection of dental implants by the body. There are chances of failure because of factors such as lack of focus on the implant, some other condition, misalignment, or diseases the patient suffers from. Dental implants use titanium material that is biocompatible, i.e., it is compatible with the tissues of the body. Titanium is widely used nowadays to replace parts of the body.
-          </p>
-        </section>
-
-        {/* Section 6: Post-Procedure Care */}
-        <section className="mt-5">
-          <h3 className="fw-bold">When can I resume work?</h3>
-          <p>
-            The patient experiences discomfort and swelling on the day of surgery as well as the day after the surgery. The patient is advised not to do any strenuous exercise. The decision to resume work depends on the individual.
-          </p>
-
-          <h3 className="fw-bold">What side effects does one face without a dental implant?</h3>
-          <p>
-            When a person loses teeth, the bones of the teeth also become weak and, after some time, these bones disappear. Other problems emerge, such as:
-          </p>
-          <ul>
-            <li>The adjacent teeth become weak, and there is no support for partials, dentures, and bridges, resulting in pain, mobile tissues of the gum, sore spots, painful ridges, and lack of retention.</li>
-            <li>The tongue also enlarges as it accommodates the space of missing teeth.</li>
-            <li>The diet changes, and one has to survive on soft food.</li>
-            <li>Bone loss results in numbness of the lower lips, and there are chances of jaw fracture.</li>
-            <li>Bone loss makes the adjacent bones weak, causing the nearby teeth to fall out.</li>
+          <ul className="custom-list">
+            <li>Weakening of adjacent teeth, leading to pain and lack of support for dentures, bridges, or partials.</li>
+            <li>Enlargement of the tongue to fill the space of missing teeth.</li>
+            <li>Changes in diet, often limited to soft foods.</li>
+            <li>Bone loss, potentially leading to numbness in the lower lip and an increased risk of jaw fractures.</li>
+            <li>Weakened adjacent bones causing further tooth loss.</li>
           </ul>
           <p>
-            Hence, one should start the treatment at an early stage because the problem becomes more severe if the treatment is delayed.
+            Early treatment is crucial to prevent worsening conditions and additional complications.
           </p>
-        </section>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div>
+      {/* Header Section */}
+      <div className="text-center my-5">
+        <img
+          src={dentalimplantsimg}
+          alt="Dental Implants"
+          className="img-fluid rounded shadow mb-4"
+          style={{ maxWidth: "300px" }}
+        />
+        <h1 className="fw-bold" style={{ color: "#00a3ff" }}>
+          Dental Implants
+        </h1>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="container my-5">
+        <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+        <div className="faq">
+          {faqData.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${activeIndex === index ? "active" : ""} mb-3`}
+              onClick={() => toggleAnswer(index)}
+            >
+              <div className="faq-question d-flex justify-content-between align-items-center p-3">
+                <span>{item.question}</span>
+                <span className="faq-icon">{activeIndex === index ? "−" : "+"}</span>
+              </div>
+              {activeIndex === index && (
+                <div className="faq-answer p-3">{item.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
