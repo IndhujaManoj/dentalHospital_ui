@@ -1,0 +1,293 @@
+.appointments-container {
+  padding: 30px;
+  background-color: #f4f4f9;
+  border-radius: 10px;
+}
+
+.appointments-title {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #007bff;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 18px;
+  text-align: center;
+}
+
+.appointments-table-wrapper {
+  overflow-x: auto;
+}
+
+.appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-table th, .appointments-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.appointments-table th {
+  background-color: #00acc1;
+  color: white;
+}
+
+.status-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.status-btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.status-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status-btn.pending {
+  background-color: #ffbc00;
+  color: white;
+}
+
+.status-btn.approved {
+  background-color: #28a745;
+  color: white;
+}
+
+.status-btn.cancelled {
+  background-color: #dc3545;
+  color: white;
+}
+
+.status-btn.active {
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+.back-btn {
+  background-color: #007bff;
+
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
+}
+
+/* Container for the pagination buttons */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  margin: 0 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.pagination-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+.pagination-btn.active {
+  background-color: #28a745;
+  color: white;
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sort-btn:hover {
+  color: #cce7ff;
+  text-decoration: underline;
+}
+
+/* Update table for better spacing with pagination */
+.appointments-table {
+  margin-bottom: 20px;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  .appointments-container {
+    padding: 20px;
+  }
+
+  .appointments-title {
+    font-size: 28px;
+  }
+
+  .status-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .pagination-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Sorting Controls Container */
+.sorting-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.sorting-controls label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sorting-controls select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f4f4f9;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sorting-controls select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.sorting-controls select:hover {
+  background-color: #e6e6f0;
+}
+
+/* Adjustments for responsiveness */
+@media screen and (max-width: 768px) {
+  .sorting-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sorting-controls select {
+    width: 100%;
+  }
+}
+.filter-controls {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-controls label {
+  font-weight: bold;
+  color: #495057;
+  margin-right: 10px;
+}
+
+.filter-controls select,
+.filter-controls input {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 180px;
+}
+
+.filter-controls button {
+  background-color: #00acc1;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.filter-controls button:hover {
+  background-color: #0056b3;
+}
+
+.filter-controls .filter-item {
+  display: flex;
+  align-items: center;
+}
+
+.filter-controls .filter-item + .filter-item {
+  margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .filter-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-controls .filter-item {
+    margin-bottom: 10px;
+  }
+
+  .filter-controls button {
+    width: 100%;
+  }
+}

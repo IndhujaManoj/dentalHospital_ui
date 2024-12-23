@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Appointment.css";
 import Appointmentimg from "../assets/Appointmentmodel.png";
 
@@ -11,7 +12,9 @@ const Appointment = () => {
   const [errors, setErrors] = useState({});
   const [selectedTime, setSelectedTime] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [bookedSlots, setBookedSlots] = useState([]);
 
+  // Validate inputs
   const validateInput = (name, date, time, phone, email, message) => {
     const phoneRegex = /^[6-9]\d{9}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,27 +52,70 @@ const Appointment = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  // Fetch booked slots for the selected date
+  useEffect(() => {
+    if (date) {
+      const fetchBookedSlots = async () => {
+        try {
+          const response = await axios.get(
+            `http://localhost:5000/api/appointments/booked-slots?date=${date}`
+          );
+          if (response.data) {
+            setBookedSlots(response.data.bookedSlots); // Store the booked slots
+          }
+        } catch (error) {
+          console.error("Error fetching booked slots:", error);
+        }
+      };
+      fetchBookedSlots();
+    }
+  }, [date]);
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const validationErrors = validateInput(name, date, selectedTime, phone, email, message);
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length === 0) {
-      alert("Appointment request submitted successfully!");
+      try {
+        // Submit the appointment to the API
+        const response = await axios.post("http://localhost:5000/api/appointments", {
+          name,
+          date,
+          time: selectedTime,
+          phone,
+          email,
+          message,
+        });
 
-      // Clear all inputs
-      setName("");
-      setDate("");
-      setSelectedTime("");
-      setPhone("");
-      setEmail("");
-      setMessage("");
-      setErrors({});
+        if (response.data.success) {
+          alert("Appointment request submitted successfully!");
+
+          // Clear form inputs
+          setName("");
+          setDate("");
+          setSelectedTime("");
+          setPhone("");
+          setEmail("");
+          setMessage("");
+          setErrors({});
+        } else {
+          alert("Error submitting the appointment. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error submitting appointment:", error);
+        alert("Error submitting the appointment. Please try again.");
+      }
     }
   };
 
   const handleTimeSelect = (slot) => {
+    if (bookedSlots.includes(slot)) {
+      alert("This time slot is already booked. Please select another one.");
+      return;
+    }
     setSelectedTime(slot);
     setShowDropdown(false);
   };
@@ -82,7 +128,7 @@ const Appointment = () => {
   ];
 
   return (
-    <div className="container-fluid ">
+    <div className="container-fluid">
       <div className="row appointment-container">
         {/* Left Side: Form */}
         <div className="col-md-6 form-side">
@@ -96,51 +142,55 @@ const Appointment = () => {
               onChange={(e) => setName(e.target.value)}
             />
             {errors.name && <div className="invalid-feedback">{errors.name}</div>}
+            
             <input
-                name="date"
-                type="date"
-                placeholder="dd-mm-yyyy*"
-                className={`form-control mb-3 ${errors.date ? "is-invalid" : ""}`}
-                style={{color:"gray"}}
-                min={new Date().toISOString().split("T")[0]}
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-              />
-              {errors.date && <div className="invalid-feedback">{errors.date}</div>}
+              name="date"
+              type="date"
+              placeholder="dd-mm-yyyy*"
+              className={`form-control mb-3 ${errors.date ? "is-invalid" : ""}`}
+              min={new Date().toISOString().split("T")[0]} // Restrict to today's date and later
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+            {errors.date && <div className="invalid-feedback">{errors.date}</div>}
 
-              <div className="position-relative mb-3">
-                <input
-                  type="text"
-                  className={`form-control ${errors.time ? "is-invalid" : ""}`}
-                  placeholder="Choose Time"
-                  value={selectedTime}
-                  readOnly
-                  onClick={() => setShowDropdown(!showDropdown)}
-                />
-                {errors.time && <div className="invalid-feedback">{errors.time}</div>}
-                {showDropdown && (
-                  <ul className="Appointdropdown-menu show w-100">
-                    {timeSlots.map((slot, index) => (
-                      <li
-                        key={index}
-                        className="Appointdropdown-item"
-                        onClick={() => handleTimeSelect(slot)}
-                      >
-                        {slot}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-
+            <div className="position-relative mb-3">
               <input
                 type="text"
-                className={`form-control mb-3 ${errors.phone ? "is-invalid" : ""}`}
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
+                className={`form-control ${errors.time ? "is-invalid" : ""}`}
+                placeholder="Choose Time"
+                value={selectedTime}
+                readOnly
+                onClick={() => setShowDropdown(!showDropdown)} // Toggle dropdown visibility
               />
-              {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
+              {errors.time && <div className="invalid-feedback">{errors.time}</div>}
+              {showDropdown && (
+                <ul className="Appointdropdown-menu show w-100">
+                  {timeSlots.map((slot, index) => (
+                    <li
+                      key={index}
+                      className="Appointdropdown-item"
+                      onClick={() => handleTimeSelect(slot)} // Handle time selection
+                    >
+                      {bookedSlots.includes(slot) ? (
+                        <span style={{ color: "gray", cursor: "not-allowed" }}>{slot}</span>
+                      ) : (
+                        slot
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <input
+              type="text"
+              className={`form-control mb-3 ${errors.phone ? "is-invalid" : ""}`}
+              placeholder="Phone"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
 
             <input
               type="email"
@@ -158,9 +208,7 @@ const Appointment = () => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
-            {errors.message && (
-              <div className="invalid-feedback">{errors.message}</div>
-            )}
+            {errors.message && <div className="invalid-feedback">{errors.message}</div>}
 
             <button type="submit" className="btn btn-primary send-btn">
               SEND MESSAGE
@@ -170,7 +218,7 @@ const Appointment = () => {
 
         {/* Right Side: Image */}
         <div className="col-md-6 image-side">
-          <img src={Appointmentimg} alt="Doctor" className="img-fluid" style={{width:"100%"}}/>
+          <img src={Appointmentimg} alt="Doctor" className="img-fluid" style={{ width: "100%" }} />
         </div>
       </div>
     </div>

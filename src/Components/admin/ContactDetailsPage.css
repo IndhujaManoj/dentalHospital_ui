@@ -1,0 +1,79 @@
+/* ContactDetailsPage.css */
+
+.contact-details-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.no-contacts-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
+
+.contact-table th,
+.contact-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.contact-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.contact-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.contact-table tr:hover {
+  background-color: #ddd;
+}
+
+.contact-table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 50px;
+  color: #555;
+}
+.back-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
+}
+
+
