@@ -9,7 +9,6 @@
   padding-left: 10px;
 }
 
-
 .container {
   padding-top: 15px;
   font-size: 14px;
@@ -62,6 +61,7 @@ header {
   margin: 0;
   list-style: none;
   width: max-content;
+  overflow:hidden;
 }
 .dropdown-menu a{
   text-decoration: none;
@@ -101,6 +101,7 @@ header {
   padding: 10px;
   margin: 0;
   list-style: none;
+  overflow:hidden;
 }
 
 .dropdown-item.has-submenu:hover .submenu {
@@ -155,9 +156,6 @@ header {
 
 /* Media Queries for Responsiveness */
 @media only screen and (min-width: 320px) and (max-width: 425px) {
-  .sellogo{
-    width:100px;
-  }
   .container .top_left {
     flex-direction: column;
     align-items: flex-start;
@@ -264,3 +262,48 @@ header {
     padding-left: 10px;
   }
 }
+@media (max-width: 992px) {
+  .dropdown-item.has-submenu > .submenu-icon {
+    cursor: pointer;
+  }
+}
+/* Submenu for Small Screens */
+@media (max-width: 992px) {
+  
+  .submenu {
+    display: none; /* Initially hidden */
+    position: static; /* No absolute positioning */
+    background-color: #fff; /* White background for submenu */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%; /* Full width under the parent item */
+    font-size: smaller;
+  }
+  .dropdown-menu{
+    font-size:small;
+  }
+
+  .dropdown-item.has-submenu .submenu {
+    display: block; /* Show submenu when active */
+  }
+
+  .submenu-item a {
+    padding: 10px 15px; /* Add padding for better UX */
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    display: block; /* Full clickable area */
+  }
+
+  .submenu-item a:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+  }
+
+  /* Icon for submenus */
+  .submenu-icon {
+    margin-left: auto; /* Align to the right */
+    font-size: 12px; /* Adjust size */
+    cursor: pointer;
+  }
+}
+

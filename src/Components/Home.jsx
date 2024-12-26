@@ -5,6 +5,7 @@ import rootcanal from "../assets/2.png"
 import  dentures from "../assets/3.png"
 import dentalhygiene from "../assets/4.png"
 import orthodontics from "../assets/5.png"
+import general from "../assets/general.png"
 import Service from "../Components/Service"
 import Appointment from "../Components/Appointment"
 
@@ -41,7 +42,7 @@ const Home = () => {
       { id: "rootcanal", title: "Root Canal Treatment", img: rootcanal, desc: "Root canal treatment helps save a damaged or infected tooth by removing the infected pulp." },
       { id: "dentures", title: "Dentures", img: dentures, desc: "Dentures are removable appliances that can replace missing teeth and restore your smile." },
       { id: "dentalhygiene", title: "Dental Hygiene", img: dentalhygiene, desc: "Proper dental hygiene is essential for preventing oral diseases and maintaining a healthy smile." },
-      { id: "dental", title: "General Dental Care", img: dentalhygiene, desc: "General dentistry includes routine care like cleanings, checkups, and fillings." },
+      { id: "dental", title: "General Dental Care", img: general, desc: "General dentistry includes routine care like cleanings, checkups, and fillings." },
       { id: "orthodontics", title: "Orthodontics", img: orthodontics, desc: "Orthodontics focuses on diagnosing and treating misaligned teeth and jaws to improve functionality and appearance." },
     ].map((service, idx) => (
       <div className="col-md-4" key={service.id}>

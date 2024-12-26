@@ -12,11 +12,11 @@ const Treatments = () => {
       </div>
       <div className="col-md-6" style={{padding:"10px"}}>
         <h2 className="display-4">We Provide</h2>
-        <h3 className="mb-4">Total Health Care</h3>
+        <h3 className="mb-4">Comprehensive Dental Care</h3>
         <div className='aboutcontent'>
-        <p>We provide the most full medical services, so every person could have the opportunity to receive qualitative medical help.</p>
-        <p>Clinical excellence, diversity, and access to innovative technology are all hallmarks of the graduate medical education experience at Careex. Our residents, fellows, and renowned staff share their experience working at Careex.</p>
-        <p><strong>We try to do our best to help you and provide with a high-quality services.</strong></p></div>
+        <p>At Selvam Dental Hospital, we offer a wide range of dental services to ensure everyone has access to exceptional oral healthcare.</p>
+        <p>With a focus on clinical expertise, patient diversity, and the latest dental technologies, our team of skilled dentists and specialists delivers personalized treatment plans for every patient.</p>
+        <p><strong>Our commitment is to provide you with high-quality, compassionate dental care, helping you achieve a healthy and confident smile.</strong></p></div>
         <a href="/contact-us" className=" serbtn btn btn-lg" style={{backgroundColor:"#045c7c", color:"white"}}>Get in Touch</a>
       </div>
     </div>
