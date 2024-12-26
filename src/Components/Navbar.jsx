@@ -4,10 +4,26 @@ import logo from "../assets/SelvamDental_logo.png";
 import { FaPhoneAlt, FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { FaAddressCard, FaSquareInstagram } from "react-icons/fa6";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(false);
   const [activeSubDropdown, setActiveSubDropdown] = useState(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    if (window.innerWidth < 992) {
+      setActiveDropdown((prev) => !prev);
+    }
+  };
+  const toggleSubDropdown = (index) => {
+    if (window.innerWidth < 992) {
+      setActiveSubDropdown((prev) => (prev === index ? null : index));
+    }
+  };
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -18,15 +34,15 @@ const Navbar = () => {
             <div className="top_left d-flex align-items-center flex-wrap">
               <span className="me-3 d-flex align-items-center">
                 <FaPhoneAlt className="me-2" />
-                91+ 9585119192
+                +800 123 45 67
               </span>
               <span className="me-3 d-flex align-items-center">
                 <IoMail className="me-2" />
-                selvamdental25@gmail.com
+                info@demolink.com
               </span>
               <span className="d-flex align-items-center">
                 <FaAddressCard className="me-2" />
-                Swamiyarmadam
+                121 Wallstreet Street, NY, USA
               </span>
             </div>
             <div className="social-icons d-flex align-items-center">
@@ -52,23 +68,26 @@ const Navbar = () => {
             <a className="navbar-brand d-flex align-items-center" href="/">
               <img
                 src={logo}
-                alt="dental Logo"
-                className="sellogo"
+                alt="Careex Logo"
+                className="me-2"
                 style={{ height: "70px", width: "300px" }}
               />
             </a>
             <button
               className="navbar-toggler"
               type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
               aria-label="Toggle navigation"
             >
-              <span className="navbar-toggler-icon"></span>
+              {isMenuOpen ? <FaTimes className="close-icon" /> : <FaBars />}
             </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
+            <div
+              className={`collapse navbar-collapse ${
+                isMenuOpen ? "show" : ""
+              }`}
+              id="navbarNav"
+            >
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
                   <a className="nav-link" href="/">
@@ -81,13 +100,18 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li
-  className={`nav-item dropdown ${activeDropdown ? "show" : ""}`}
-  onMouseEnter={() => setActiveDropdown(true)}
-  onMouseLeave={() => setActiveDropdown(false)}
->
-  <a className="nav-link" href="/treatments">
-    TREATMENTS
-  </a>
+                  className={`nav-item dropdown ${activeDropdown ? "show" : ""}`}
+                  onClick={toggleDropdown}
+                  onMouseEnter={() => {
+                    if (window.innerWidth >= 992) setActiveDropdown(true);
+                  }}
+                  onMouseLeave={() => {
+                    if (window.innerWidth >= 992) setActiveDropdown(false);
+                  }}
+                >
+                  <a className="nav-link" href="#">
+                    TREATMENTS
+                  </a>
   <ul className="dropdown-menu">
     {[
       {
@@ -128,27 +152,40 @@ const Navbar = () => {
       { name: "Brushing Techniques", link: "/treatments/brushing-techniques" },
     ].map((item, index) => (
       <li
-        key={index}
-        className={`dropdown-item ${item.submenu ? "has-submenu" : ""}`}
-        onMouseEnter={() => setActiveSubDropdown(index)}
-        onMouseLeave={() => setActiveSubDropdown(null)}
+      key={index}
+      className={`dropdown-item ${item.submenu ? "has-submenu" : ""}`}
+      onClick={(e) => {
+        e.stopPropagation(); // Prevent click events from propagating to parent elements
+        if (window.innerWidth < 992) toggleSubDropdown(index);
+      }}
+      onMouseEnter={() => {
+        if (window.innerWidth >= 992) setActiveSubDropdown(index);
+      }}
+      onMouseLeave={() => {
+        if (window.innerWidth >= 992) setActiveSubDropdown(null);
+      }}
       >
         <a href={item.link || "#"}>{item.name}</a>
-        {item.submenu && <span className="submenu-icon">▶</span>}
-        {item.submenu && activeSubDropdown === index && (
-          <ul className="submenu">
-            {item.submenu.map((subItem, subIndex) => (
-              <li key={subIndex} className="submenu-item">
-                <a href={subItem.link}>{subItem.name}</a>
-              </li>
-            ))}
-          </ul>
-        )}
+        {item.submenu && (
+  <>
+    <span className="submenu-icon">▶</span>
+    {activeSubDropdown === index && (
+      <ul className="submenu">
+        {item.submenu.map((subItem, subIndex) => (
+          <li key={subIndex} className="submenu-item">
+            <a href={subItem.link} onClick={(e) => e.stopPropagation()}>
+              {subItem.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </>
+)}
       </li>
     ))}
   </ul>
 </li>
-
 
                 {/* <li className="nav-item">
                   <a className="nav-link" href="/virtual-tour">

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Appointment.css";
-import Appointmentimg from "../assets/Appointmentmodel.png";
+import Appointmentimg from "../assets/appo.png";
 
 const Appointment = () => {
   const [name, setName] = useState("");
