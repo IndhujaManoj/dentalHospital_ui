@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaCalendarAlt, FaCheckCircle, FaUsers, FaEnvelope, FaAddressBook } from "react-icons/fa";  // Added FaAddressBook for contact icon
+import { FaCalendarAlt, FaCheckCircle, FaUsers, FaEnvelope, FaAddressBook } from "react-icons/fa"; // Added FaAddressBook for contact icon
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -19,6 +19,7 @@ function Dashboard() {
   const handleViewContactDetails = () => {
     navigate("/admin/contactDetails");
   };
+
   const handleUploadSmile = () => {
     navigate("/admin/image-upload"); // Navigates to the Upload Smile page
   };
@@ -39,10 +40,8 @@ function Dashboard() {
         // Fetch contact details count
         const contactDetailsResponse = await axios.get("http://localhost:5000/api/contact"); // Replace with actual API endpoint
         setContactDetailsCount(contactDetailsResponse.data.data.length); // Adjust based on response structure
-
       } catch (error) {
         console.error("Error fetching dashboard data:", error);
-        alert("There was an error fetching data. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -68,44 +67,44 @@ function Dashboard() {
   return (
     <div className="dashboard-container">
       <header className="dashboard-header">
-        <h1>Welcome, Admin</h1>
-        <p>Today’s Date: {currentDate}</p>
-        <p>Current Time: {currentTime}</p> {/* Displaying the current time */}
+        <h1 className="dashboard-header__title">Welcome, Admin</h1>
+        <p className="dashboard-header__info">Today’s Date: {currentDate}</p>
+        <p className="dashboard-header__info">Current Time: {currentTime}</p> {/* Displaying the current time */}
       </header>
 
       <div className="dashboard-content">
         {/* Statistics Section */}
         <div className="dashboard-stats">
           <div className="stat-card">
-            <FaCalendarAlt className="stat-icon" />
-            <h2>Total Appointments</h2>
-            <p>{appointmentsCount}</p>
+            <FaCalendarAlt className="stat-card__icon" />
+            <h2 className="stat-card__title">Total Appointments</h2>
+            <p className="stat-card__count">{appointmentsCount}</p>
           </div>
-          <div className="stat-card approved">
-            <FaCheckCircle className="stat-icon approved-icon" />
-            <h2>Approved Appointments</h2>
-            <p>{approvedAppointmentsCount}</p>
+          <div className="stat-card stat-card--approved">
+            <FaCheckCircle className="stat-card__icon" />
+            <h2 className="stat-card__title">Approved Appointments</h2>
+            <p className="stat-card__count">{approvedAppointmentsCount}</p>
           </div>
           {/* New stat card for Contact Details */}
           <div className="stat-card">
-            <FaAddressBook className="stat-icon" />
-            <h2>Contact Details</h2>
-            <p>{contactDetailsCount}</p>
+            <FaAddressBook className="stat-card__icon" />
+            <h2 className="stat-card__title">Contact Details</h2>
+            <p className="stat-card__count">{contactDetailsCount}</p>
           </div>
         </div>
 
         {/* Quick Actions Section */}
         <div className="quick-actions">
-          <h2>Quick Actions</h2>
-          <div className="actions-grid">
+          <h2 className="quick-actions__title">Quick Actions</h2>
+          <div className="quick-actions__grid">
             <button className="action-btn" onClick={handleViewAppointments}>
-              <FaCalendarAlt className="action-icon" /> View Appointments
+              <FaCalendarAlt className="action-btn__icon" /> View Appointments
             </button>
             <button className="action-btn" onClick={handleViewContactDetails}>
-              <FaEnvelope className="action-icon" /> View Contact Details
+              <FaEnvelope className="action-btn__icon" /> View Contact Details
             </button>
             <button className="action-btn" onClick={handleUploadSmile}>
-              <FaUsers className="action-icon" /> Upload Smile
+              <FaUsers className="action-btn__icon" /> Upload Smile
             </button>
           </div>
         </div>

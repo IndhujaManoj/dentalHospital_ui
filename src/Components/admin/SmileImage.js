@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SmileImage.css";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 
 const SmileImage = () => {
   const [imagesData, setImagesData] = useState([]);
@@ -11,6 +12,7 @@ const SmileImage = () => {
   const [afterImage, setAfterImage] = useState(null);
   const [beforeImage2, setBeforeImage2] = useState(null);
   const [afterImage2, setAfterImage2] = useState(null);
+  const navigate = useNavigate(); // Hook for navigation
 
   // Categories available for selection
   const categories = [
@@ -123,6 +125,12 @@ const SmileImage = () => {
     <div className="admin-container">
       <h1>Admin - Smile Gallery</h1>
       {uploadStatus && <div className="status-message">{uploadStatus}</div>}
+
+
+      {/* Back to Dashboard Button */}
+      <button className="back-btn" onClick={() => navigate("/admin/dashboard")}>
+        Back to Dashboard
+      </button>
 
       <form onSubmit={handleImageUpload} className="upload-form">
         <label className="form-label">Category:</label>
