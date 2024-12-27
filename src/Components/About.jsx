@@ -1,5 +1,5 @@
 import React from 'react'
-import about from "../assets/servicepicture.jpg"
+import about from "../assets/treatmentspost.png"
 import "./About.css"
 import doctor1 from "../assets/virtualtour-4.jpg";
 // import doctor2 from "../assets/doctor2.jpeg";
@@ -50,33 +50,39 @@ const About = () => {
   <h1 className="abus">About Us</h1>
   <h2>Management Team</h2>
   <div className="team-member">
-    <div className="member-photo-container">
-      <img 
-        src={doctor1} 
-        alt="Portrait of Dr. M. Charles Prem Kumar, Founder and Managing Director of Charli Dental" 
-        className="member-photo" 
-      />
-    </div>
-    <div className="member-details">
-      <h3 style={{color:"black"}}>Dr.Shabin jhon BDS,FRCD</h3>
-      <p style={{color:"black"}}><strong>Founder & Owner, Managing Director</strong></p>
-      <p style={{textAlign:"justify"}}>
-        Dr. Charles, a Dental Surgeon who graduated from Annamalai University in 1999, is passionate about providing quality dental services to society. He founded Charli Dental in 2009, which is committed to excellence in dentistry.
-      </p>
-      <h4 className='member-subtitle'>Areas of Expertise</h4>
-      <ul className="expertise-list">
-        <li>Providing quality dental services</li>
-        <li>Commitment to excellence in dentistry</li>
-        <li>Dental health education and outreach</li>
-        <li>Leadership in the dental industry</li>
-      </ul>
-      <h4 className='member-subtitle'>Education</h4>
-      <ul className="education-list">
-        <li>Bachelor of Dental Surgery, Annamalai University (1999)</li>
-        <li>Specialized training in dental health practices</li>
-      </ul>
-    </div>
+  <div className="member-photo-container">
+    <img
+      src={doctor1}
+      alt="Portrait of Dr.shabin image"
+      className="member-photo"
+    />
   </div>
+  <div className="member-details">
+    <h3 style={{ color: "black" }}>Dr. Shabin John BDS, FRCD</h3>
+    <p style={{ color: "black" }}>
+      <strong>Founder & Owner, Managing Director</strong>
+    </p>
+    <p style={{ textAlign: "justify" }}>
+      Dr. Shabin John, a Dental Surgeon who graduated from Annamalai University
+      in 1999, is passionate about providing quality dental services to society.
+      He founded Charli Dental in 2009, which is committed to excellence in
+      dentistry.
+    </p>
+    <h4 className="member-subtitle">Areas of Expertise</h4>
+    <ul className="expertise-list">
+      <li>Providing quality dental services</li>
+      <li>Commitment to excellence in dentistry</li>
+      <li>Dental health education and outreach</li>
+      <li>Leadership in the dental industry</li>
+    </ul>
+    <h4 className="member-subtitle">Education</h4>
+    <ul className="education-list">
+      <li>Bachelor of Dental Surgery, Annamalai University (1999)</li>
+      <li>Specialized training in dental health practices</li>
+    </ul>
+  </div>
+</div>
+
 </section>
 
 

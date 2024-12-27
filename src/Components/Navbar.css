@@ -61,7 +61,6 @@ header {
   margin: 0;
   list-style: none;
   width: max-content;
-  overflow:hidden;
 }
 .dropdown-menu a{
   text-decoration: none;
@@ -101,7 +100,6 @@ header {
   padding: 10px;
   margin: 0;
   list-style: none;
-  overflow:hidden;
 }
 
 .dropdown-item.has-submenu:hover .submenu {
@@ -144,7 +142,7 @@ header {
 }
 
 .navbar-nav .nav-link:hover {
-  color: #0078d7;
+  color:#04abe3;
 }
 .close-icon {
   font-size: 2rem; /* Size of the close icon */
@@ -155,7 +153,10 @@ header {
 
 
 /* Media Queries for Responsiveness */
-@media only screen and (min-width: 320px) and (max-width: 425px) {
+@media only screen and (min-width: 320px) and (max-width: 426px) {
+  .navbar{
+    padding-bottom: 10px;
+  }
   .container .top_left {
     flex-direction: column;
     align-items: flex-start;
@@ -306,4 +307,3 @@ header {
     cursor: pointer;
   }
 }
-

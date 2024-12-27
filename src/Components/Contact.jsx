@@ -53,7 +53,7 @@ const Contact = () => {
       <div className="contactbanner">
         <img className="img-fluid" src={contactbanner} alt="Contact Banner" />
       </div>
-      <div className="container my-5">
+      <div className="container my-5" >
         <div className="row">
           <div className="col-md-6">
             <h2 className="contacthead">Contact Details</h2>
@@ -111,8 +111,8 @@ const Contact = () => {
       </div>
       <Appointment />
 
-      <div className="row mt-4 ">
-          <div className="col-12">
+      <div className="row mt-4" style={{overflow:"hidden",paddingLeft:"12px",width:"100%"}}>
+          <div className="col-12" style={{paddingRight:"0"}}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24593.54767785553!2d77.24871727241343!3d8.29004117164459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0455f28b99aa0f%3A0x99f0bed9014642b!2sSwamiyar%20Madam%2C%20Tamil%20Nadu%20629179!5e1!3m2!1sen!2sin!4v1734878841076!5m2!1sen!2sin"
               width="100%"

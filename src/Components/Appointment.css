@@ -108,43 +108,49 @@
     max-height: 400px;
   }
 }
-
-/* Tablets and small devices (max-width: 768px) */
+/* Adjust layout for screens with max-width of 540px */
 @media (max-width: 768px) {
   .appointment-container {
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column; /* Stack form and image vertically */
+    align-items: center; /* Center align items in the container */
+    gap: 15px; /* Add spacing between form and image */
+    margin: 10px;
     padding: 10px;
   }
 
   .form-side {
-    flex: 1;
-    max-width: 50%;
+    width: 100%; /* Take full width of the container */
+    text-align: center; /* Center align text content */
+    margin-bottom: 15px; /* Add space below form */
   }
 
   .image-side {
-    flex: 1;
-    max-width: 50%;
-  }
-
-  .form-side h2 {
-    font-size: 1.8rem;
-  }
-
-  .form-control {
-    font-size: 0.9rem;
-    padding: 8px;
-  }
-
-  .send-btn {
-    font-size: 0.85rem;
-    padding: 8px;
+    display: flex; /* Enable flexbox for centering */
+    justify-content: center; /* Horizontally center image */
+    align-items: center; /* Vertically center image */
+    width: 100%; /* Ensure it adapts to container width */
   }
 
   .image-side img {
-    max-height: 350px;
+    width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Fit within the container */
+    max-height: 300px; /* Optional: Limit image height */
+  }
+
+  .form-control {
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    padding: 10px; /* Adjust padding for usability */
+    width: 100%; /* Ensure form controls span the full width */
+  }
+
+  .send-btn {
+    font-size: 0.85rem; /* Adjust button font size */
+    padding: 10px 15px; /* Adjust button padding */
+    width: 100%; /* Button spans the full width */
+    margin-top: 10px; /* Add space above button */
   }
 }
+
 
 /* Small mobile screens (max-width: 375px) */
 @media (max-width: 375px) {

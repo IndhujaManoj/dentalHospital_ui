@@ -34,15 +34,15 @@ const Navbar = () => {
             <div className="top_left d-flex align-items-center flex-wrap">
               <span className="me-3 d-flex align-items-center">
                 <FaPhoneAlt className="me-2" />
-                +800 123 45 67
+                9585119192
               </span>
               <span className="me-3 d-flex align-items-center">
                 <IoMail className="me-2" />
-                info@demolink.com
+                selvamdental25@gmail.com
               </span>
               <span className="d-flex align-items-center">
                 <FaAddressCard className="me-2" />
-                121 Wallstreet Street, NY, USA
+                Swamiyarmadam
               </span>
             </div>
             <div className="social-icons d-flex align-items-center">
@@ -55,7 +55,7 @@ const Navbar = () => {
               <a href="#" className="text-white mx-2">
                 <FaFacebook />
               </a>
-              <a href="#" className="text-white mx-2">
+              <a href="https://www.instagram.com/selvam_dental/" className="text-white mx-2">
                 <FaSquareInstagram />
               </a>
             </div>

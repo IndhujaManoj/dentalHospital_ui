@@ -70,6 +70,10 @@
   font-size: 16px;
   
 }
+.img-fluid{
+  padding-left: 50px;
+
+}
 
 /* Navigation Buttons (Optional, add buttons if needed) */
 .review-nav {
@@ -111,7 +115,7 @@
 @media only screen and (max-width: 767px) {
   .img-fluid{
     padding-left:0;
-    padding-right: 30px;
+    
   }
   
   .service-row {
@@ -129,7 +133,9 @@
   }
 
   .review-slide {
-    text-align: center;
+    text-align:justify;
+    
+    
   }
 
   .review-image img {
@@ -147,7 +153,7 @@
 }
 
 /* Extra small screens (up to 425px) */
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 426px) {
   .review-box {
     width: 100%;
   }
@@ -169,3 +175,44 @@
     font-size: 12px;
   }
 }
+.review-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.control-button {
+  background-color: #045c7c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+  background-color:#04abe3;
+}
+@media only screen and (max-width: 540px) {
+  .review-details-container {
+    gap: 20px; /* Adds spacing between slides */
+  }
+
+  .review-slide {
+    padding: 10px; /* Adds internal padding for better spacing */
+    text-align: justify;
+  }
+
+  .review-details p {
+    font-size: 14px; /* Adjust font size for readability */
+    line-height: 1.5; /* Improves spacing between lines */
+  }
+
+  .review-image img {
+    margin-bottom: 15px; /* Adds space between the image and text */
+  }
+}
+

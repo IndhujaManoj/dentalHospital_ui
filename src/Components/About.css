@@ -54,6 +54,8 @@ font-family: "PT Serif", serif;
   padding: 20px;
   padding-left: 0;
   font-family: Segoe UI;
+  margin:0px 50px
+
   
 }
 
@@ -67,16 +69,18 @@ font-family: "PT Serif", serif;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  
-  flex-wrap: wrap;
-  margin-top:50px;
-   /* Allows wrapping on smaller screens */
+  gap: 20px;
+  margin-top: 50px;
+  flex-wrap: wrap; 
 }
 
 .member-photo-container {
   flex: 1;
-  max-width: 100%;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%; /* Ensures the column takes up 50% of the width */
+  height: auto;
 }
 .member-subtitle{
   color:black
@@ -85,21 +89,20 @@ font-family: "PT Serif", serif;
   font-weight: bold;
 }
 .member-photo {
-  width: 80%;
-  height: 440px;
+  width: 100%; /* Ensures the image takes the full width of its container */
+  height: 100%; /* Ensures the image fills the height of its container */
+  max-height: 440px; /* Optional: Maintain consistent maximum height */
   border-radius: 10px;
   object-fit: cover;
-  
-  margin: 0 auto;
 }
 
 .member-details {
-  color: rgb(79, 78, 78);
-  padding: 10px;
   flex: 1;
-  max-width: 45%;
+  max-width: 50%; /* Ensures the column takes up 50% of the width */
+  padding: 10px;
   font-size: 1em;
   line-height: 1.6rem;
+  color: rgb(79, 78, 78);
 }
 
 .expertise-list,
@@ -116,24 +119,23 @@ font-family: "PT Serif", serif;
 /* Responsive Design for Smaller Devices */
 @media (max-width: 768px) {
   .team-member {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    gap:20px;
-    
+    flex-direction: column; /* Stacks items vertically */
+    gap: 20px; /* Adds spacing between stacked elements */
   }
 
-  .member-photo-container{
-    max-width: 100%; /* Take full width */
-    text-align: center;
-
-  }
-  .member-details {
-    max-width: 100%; /* Take full width */
-    text-align: left;
+  .member-photo-container {
+    max-width: 100%; /* Full width for smaller devices */
+    height: auto;
   }
 
   .member-photo {
-    max-width: 100%; /* Make the image responsive */
+    width: 100%; /* Ensures full width scaling */
+    max-height: auto; /* Adjusts dynamically for smaller devices */
+  }
+
+  .member-details {
+    max-width: 100%; /* Full width for details */
+    text-align: left;
   }
 }
 
@@ -145,3 +147,98 @@ font-family: "PT Serif", serif;
     margin: 10px 0;
   }
 }
+.about-us {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0 0;
+}
+
+.about-us h1,
+.about-us h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 50px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.member-photo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%; /* Equal width distribution for the image and details */
+}
+
+.member-photo {
+  width: 100%; /* Ensures full width scaling */
+  height: 100%; /* Ensures full height scaling */
+  max-height: 440px; /* Optional: Maintain consistent maximum height */
+  border-radius: 10px;
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.member-details {
+  flex: 1;
+  max-width: 50%; /* Equal width distribution for the image and details */
+  padding: 10px;
+  font-size: 1em;
+  line-height: 1.6rem;
+  color: rgb(79, 78, 78);
+}
+
+.expertise-list,
+.education-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.member-details h4 {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+ 
+  .team-member {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Add spacing between stacked elements */
+  }
+
+  .member-photo-container {
+    max-width: 100%; /* Full width for smaller devices */
+    height: auto; /* Allow height to adjust dynamically */
+    text-align: center;
+  }
+
+  .member-photo {
+    max-width: 100%; /* Make the image responsive */
+    height: auto; /* Adjust height dynamically */
+  }
+
+  .member-details {
+    max-width: 100%; /* Full width for details */
+    text-align: left;
+  }
+}
+
+/* Adjustments for extra small devices */
+@media (max-width: 480px) {
+  .member-details {
+    font-size: 0.9em; /* Slightly smaller font for compact screens */
+    line-height: 1.4rem;
+  }
+
+  .member-photo {
+    max-height: 300px; /* Reduce height on very small screens */
+  }
+}
+

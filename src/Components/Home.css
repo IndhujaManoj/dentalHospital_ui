@@ -3,7 +3,7 @@
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background-image: url("../assets/Home_background.jpg"); /* Replace with your image path */
+  background-image: url("../assets/Home_background.jpg"); 
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -225,46 +225,121 @@
 }
 
   
-  
-  /* Responsive Adjustments */
-  @media only screen and (max-width: 768px) {
-    .service-card {
-      padding: 20px;
-    }
-    .timetable-card {
-      text-align: center;
-    }
-    .timetable-card .btn {
-      margin-top: 20px;
-    }
-    .text-section{
-      padding-top:100px;
-      padding-left:40px;
-      padding-right: 20px;
-      width:500px
-    }
-    .text-section p{
-      font-size: smaller;
-    }
+ /* Responsive Adjustments */
+@media only screen and (max-width: 768px) {
+  .service-card {
+    padding: 20px;
   }
-  
-  @media only screen and (max-width: 576px) {
-    .service-card {
-      padding: 15px;
-    }
-    .service-card h5 {
-      font-size: 1rem;
-    }
-    .service-card p {
-      font-size: 0.9rem;
-    }
-    .timetable-card {
-      padding: 20px;
-    }
-    .timetable-list li {
-      font-size: 1rem;
-    }
+  .timetable-card {
+    text-align: center;
+    margin-top: 20px;
   }
+  .timetable-card .btn {
+    margin-top: 20px;
+  }
+  .text-section{
+    padding-top:100px;
+    padding-left:40px;
+    padding-right: 20px;
+    width:500px
+  }
+  .text-section p{
+    font-size: smaller;
+  }
+}
+@media only screen and (min-width: 821px) and (max-width: 912px)  {
+  .home-section {
+    justify-content: center; /* Centers the entire section */
+  }
+
+  .text-section {
+    text-align: left; /* Centers text */
+    padding-left: 200px; /* Removes left padding */
+    padding-right: 0;
+    font-size:larger;
+    margin-left: 90px;
+    margin-bottom: 100px; /* Removes right padding */
+  }
+
+  .text-highlight {
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
+  }
+
+  .display-4 {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .lead {
+    font-size: 1rem; /* Adjust paragraph size for smaller screens */
+  }
+
+  .btn {
+    margin-top: 20px; /* Adds spacing above the button */
+  }
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  .service-card {
+    padding: 20px;
+  }
+
+  /* Reduce timetable card height */
+  .timetable-card {
+    padding: 15px 20px; /* Reduced padding for a smaller height */
+    height: auto; /* Allow flexible height based on content */
+  }
+
+  .timetable-card .btn {
+    margin-top: 0px;
+  }
+
+  .text-section {
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 20px;
+    width: 500px;
+  }
+  .text-section p {
+    font-size: medium;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+  .service-card {
+    padding: 20px;
+  }
+
+  .timetable-card {
+    padding: 30px;
+    height: 100%; /* Ensures full height alignment with the service section */
+  }
+
+  .timetable-card .btn {
+    margin-top: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 576px) {
+  .service-card {
+    padding: 15px;
+  }
+  .service-card h5 {
+    font-size: 1rem;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+  }
+  .timetable-card {
+    padding: 20px;
+  }
+  .timetable-list li {
+    font-size: 1rem;
+  }
+}
+
   
   
   
